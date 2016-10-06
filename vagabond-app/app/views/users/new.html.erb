@@ -2,7 +2,10 @@ Sign up
 
 <%= form_for @user do |f| %>
   <div>
-    <%= f.text_field :name, placeholder: "name" %>
+    <%= f.text_field :first_name, placeholder: "First name" %>
+  </div>
+  <div>
+    <%= f.text_field :last_name, placeholder: "Last name" %>
   </div>
   <div>
     <%= f.email_field :email, placeholder: "email" %>
