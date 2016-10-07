@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get 'cities/index'
 
-  get 'cities/show'
+  get 'cities/show/:id', to: 'cities#show', as: 'city'
 
   get 'cities/new'
 
