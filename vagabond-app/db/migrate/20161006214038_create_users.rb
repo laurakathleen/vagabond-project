@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :password_digest
       t.string :current_city
       t.datetime :date
+      
 
       t.timestamps
     end
