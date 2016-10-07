@@ -5,3 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+p "Hello from seeds.rb"
+test = User.create({first_name: 'test', last_name: 'test', email: 'test@test.com', password: 'test', current_city: 'testing city'})
+User.destroy_all
+
+users_data = []
+	
+10.times do 
+	p "Are you working?"
+	p users_data
+	users_data << {
+		first_name: FFaker::Name.first_name,
+		last_name: FFaker::Name.last_name,
+		email: FFaker::Internet.safe_email,
+		password: 'test'
+	}
+end	
+
+
+users = User.create(users_data)
