@@ -6,4 +6,10 @@
   <ul>
 
   <%= link_to "Edit Profile", edit_user_path %>
+
+
+  <% for post in @posts %>
+	<%= link_to post.post_title, post_path %>
+  <% end %>
+
 </div>

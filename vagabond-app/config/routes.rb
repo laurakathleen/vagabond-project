@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'posts/index'
 
-  get 'posts/show'
+  get 'posts/show/:id', to: 'posts#show', as: 'post'
 
   get 'posts/new'
 
