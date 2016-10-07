@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'posts/index'
+  post '/posts', to: 'posts#create'
 
   get 'posts/show/:id', to: 'posts#show', as: 'post'
 

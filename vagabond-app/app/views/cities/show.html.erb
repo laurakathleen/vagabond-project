@@ -6,3 +6,5 @@
 <% for post in @posts %>
   <%= link_to post.post_title, '/posts/show/' + post.id.to_s %>
 <% end %>
+
+<%= link_to 'Create Post', posts_new_path %>
