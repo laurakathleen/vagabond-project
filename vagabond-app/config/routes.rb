@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  get 'posts/index'
+
+  get 'posts/show'
+
+  get 'posts/new'
+
+  get 'posts/edit'
+
+  get 'posts/delete'
+
+  get 'cities/index'
+
+  get 'cities/show'
+
+  get 'cities/new'
+
   root to: 'users#index'
 
 
