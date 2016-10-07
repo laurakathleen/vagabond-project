@@ -9,6 +9,12 @@ Add New Post
   <div>
     <%= f.text_field :post_content, placeholder: "content" %>
   </div>
+  <div>
+    <%= f.hidden_field :city_id, value: 2 %>
+  </div>
+  <div>
+    <%= f.hidden_field :user_id, value: session[:user_id] %>
+  </div>
 
   <%= f.submit "Create Post" %>
 
