@@ -5,8 +5,8 @@ Rails.application.routes.draw do
 
   get 'posts/new'
 
-  get 'posts/edit'
-
+  get 'posts/:post_id/edit', to:'posts#edit', as: 'edit_post'
+  patch 'posts/show/:post_id', to: 'posts#update'
   get 'posts/delete'
 
   get 'cities/index'
