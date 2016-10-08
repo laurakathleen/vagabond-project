@@ -10,6 +10,7 @@ class PostsController < ApplicationController
   end
 
   def new
+    @city_id = getCityId
     @post = Post.new
   end
 
