@@ -1,10 +1,11 @@
 
-p "Hello from seeds.rb"
-# test = User.create({first_name: 'test', last_name: 'test', email: 'test@test.com', password: 'test', current_city: 'testing city', home_city: 'testing city', favorite_city: 'testing city'})
-# test_post = Post.create({post_title: "Test Title", post_content: 'Test content'})
+User.destroy_all
+Post.destroy_all
 
-# User.destroy_all
-# Post.destroy_all
+test = User.create({first_name: 'test', last_name: 'test', email: 'test@test.com', password: 'test', current_city: 'testing city', home_city: 'testing city', favorite_city: 'testing city'})
+test_post = Post.create({post_title: "Test Title", post_content: 'Test content'})
+p User.first
+p Post.first
 
 # users_data = []
 # posts_data = []
