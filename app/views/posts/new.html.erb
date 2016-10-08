@@ -1,6 +1,6 @@
 <h1>Posts#new</h1>
 
-<p></p>
+<p><%= @city_id %></p>
 Add New Post
 
 <%= form_for @post do |f| %>
@@ -11,7 +11,7 @@ Add New Post
     <%= f.text_field :post_content, placeholder: "content" %>
   </div>
   <div>
-    <%= f.hidden_field :city_id, value: 2 %>
+    <%= f.hidden_field :city_id, value: @city_id %>
   </div>
   <div>
     <%= f.hidden_field :user_id, value: session[:user_id] %>

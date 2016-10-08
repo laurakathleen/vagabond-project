@@ -11,5 +11,15 @@
 // about supported directives.
 //
 //= require jquery
-//= require materialize-sprockets
-//= require_tree .
+//= require plswork
+
+
+
+$(document).ready(function() {
+  console.log('Sanity');
+  $('a').hover(function() {
+    console.log('hovering');
+  });
+});
+
+console.log('anything');

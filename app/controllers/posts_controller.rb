@@ -10,8 +10,8 @@ class PostsController < ApplicationController
   end
 
   def new
+    @city_id = getCityId
     @post = Post.new
-    @dog = @current_user
   end
 
   def edit
