@@ -1,0 +1,18 @@
+<div>
+  Welcome <%= @user.first_name %> &nbsp<%= @user.last_name%>
+  <ul>
+    <li>Current City: <%=@user.current_city%></li>
+    <li>Home City: <%=@user.home_city%></li>
+    <li>Favorite City: <%=@user.favorite_city%></li>
+    <li>Date: <%=@user.created_at%></li>
+  <ul>
+
+  <%= link_to "Edit Profile", edit_user_path %>
+  <i class="large material-icons">insert_chart</i>
+
+
+  <% for post in @posts %>
+	<%= link_to post.post_title, '/posts/show/' + post.id.to_s %>
+  <% end %>
+
+</div>
