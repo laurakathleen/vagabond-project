@@ -2786,3 +2786,63 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 83ms (Views: 70.8ms | ActiveRecord: 1.1ms)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (13.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (26.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "current_city", "created_at", "updated_at", "first_name", "last_name", "home_city", "favorite_city") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "test@test.com"], ["password_digest", "$2a$10$D8FzYTiF0Ce3SBIXDOSdpeTq0p.zKBUoExa21hxpDUV3aQ2..Xon2"], ["current_city", "testing city"], ["created_at", 2016-10-08 17:25:16 UTC], ["updated_at", 2016-10-08 17:25:16 UTC], ["first_name", "test"], ["last_name", "test"], ["home_city", "testing city"], ["favorite_city", "testing city"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "current_city", "created_at", "updated_at", "first_name", "last_name", "home_city", "favorite_city") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "maxwell_sipes@example.com"], ["password_digest", "$2a$10$UayXzdE7GYvY0Q.9wS5oGuv6tuL5K.aSlr8KAJgps6dunj2hdWSEq"], ["current_city", "South Helga"], ["created_at", 2016-10-08 17:25:16 UTC], ["updated_at", 2016-10-08 17:25:16 UTC], ["first_name", "Camron"], ["last_name", "Witting"], ["home_city", "Godfreychester"], ["favorite_city", "Corkeryshire"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "current_city", "created_at", "updated_at", "first_name", "last_name", "home_city", "favorite_city") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "letitia_reynolds@example.org"], ["password_digest", "$2a$10$GiMBJYKKelvNP/BHQ.YyyuwZ0i3BNf5VOlJ.v2UZ89LA5mALNgZsa"], ["current_city", "Barrettton"], ["created_at", 2016-10-08 17:25:16 UTC], ["updated_at", 2016-10-08 17:25:16 UTC], ["first_name", "William"], ["last_name", "Fay"], ["home_city", "North Gerald"], ["favorite_city", "Lake Leopoldoshire"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "current_city", "created_at", "updated_at", "first_name", "last_name", "home_city", "favorite_city") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "rosendo@example.org"], ["password_digest", "$2a$10$m9HNh1EVt9votZ2MDn8NfOhhjBUk3ciRLY/g9NdQ3FIuRODVOchfS"], ["current_city", "Kihnberg"], ["created_at", 2016-10-08 17:25:16 UTC], ["updated_at", 2016-10-08 17:25:16 UTC], ["first_name", "Zaria"], ["last_name", "O'Connell"], ["home_city", "Wernerton"], ["favorite_city", "Haylieland"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "current_city", "created_at", "updated_at", "first_name", "last_name", "home_city", "favorite_city") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "giovanny@example.net"], ["password_digest", "$2a$10$dArIN5RXhnznJ3EpdO7c2udxEX0jyMn10oANP4t1wyCS9dBbvNjMu"], ["current_city", "Emardport"], ["created_at", 2016-10-08 17:25:16 UTC], ["updated_at", 2016-10-08 17:25:16 UTC], ["first_name", "Darren"], ["last_name", "Parisian"], ["home_city", "South Madilyntown"], ["favorite_city", "Luettgenshire"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "current_city", "created_at", "updated_at", "first_name", "last_name", "home_city", "favorite_city") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "kelley@example.net"], ["password_digest", "$2a$10$o9/KuIvstu8TXSA9ymffQuJ2FF8ZrlFjwRDmpIPhe22wITufDq16u"], ["current_city", "Estherborough"], ["created_at", 2016-10-08 17:25:16 UTC], ["updated_at", 2016-10-08 17:25:16 UTC], ["first_name", "Dovie"], ["last_name", "Kuvalis"], ["home_city", "South Jaida"], ["favorite_city", "West Kenny"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "current_city", "created_at", "updated_at", "first_name", "last_name", "home_city", "favorite_city") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "darwin.predovic@example.org"], ["password_digest", "$2a$10$7u4ufCXmj2GyYE3vTK3uU.prq.lfAU6aNclCoM33DUCmqKPMgAeZ6"], ["current_city", "Lake Ardith"], ["created_at", 2016-10-08 17:25:16 UTC], ["updated_at", 2016-10-08 17:25:16 UTC], ["first_name", "Ervin"], ["last_name", "Schaden"], ["home_city", "New Nicklauston"], ["favorite_city", "South Chad"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "current_city", "created_at", "updated_at", "first_name", "last_name", "home_city", "favorite_city") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "cortez@example.org"], ["password_digest", "$2a$10$QJ8srUkYTMV0VJ.0/MFWheJIFvjEM/trlNvQzt.s7xfxMaUlSYvYm"], ["current_city", "Kesslerborough"], ["created_at", 2016-10-08 17:25:16 UTC], ["updated_at", 2016-10-08 17:25:16 UTC], ["first_name", "Cecile"], ["last_name", "Waelchi"], ["home_city", "South Mosehaven"], ["favorite_city", "New Bernadineview"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "current_city", "created_at", "updated_at", "first_name", "last_name", "home_city", "favorite_city") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "lesly.feest@example.org"], ["password_digest", "$2a$10$.TlSz1yMcfwyCihW31TrY.iAZbUORkU9VKDwtkJ5Js1DmbLjpRFqq"], ["current_city", "West Devonville"], ["created_at", 2016-10-08 17:25:16 UTC], ["updated_at", 2016-10-08 17:25:16 UTC], ["first_name", "Jarvis"], ["last_name", "Kemmer"], ["home_city", "Nitzscheview"], ["favorite_city", "Pacochaview"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "current_city", "created_at", "updated_at", "first_name", "last_name", "home_city", "favorite_city") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "laurie.walker@example.org"], ["password_digest", "$2a$10$.xPQinQ7iI.M7/QOblvuB.j39D28cpcLx12xj.b8.7J5CmifbP0tK"], ["current_city", "Maximeborough"], ["created_at", 2016-10-08 17:25:16 UTC], ["updated_at", 2016-10-08 17:25:16 UTC], ["first_name", "Anna"], ["last_name", "Nolan"], ["home_city", "New Cassandra"], ["favorite_city", "North Jocelyn"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "current_city", "created_at", "updated_at", "first_name", "last_name", "home_city", "favorite_city") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "furman.howell@example.org"], ["password_digest", "$2a$10$HmLja7kNZJmyymNBSmNVEuA18IhmNmHXQgWUKquEILBurUgxrMRLa"], ["current_city", "Daughertytown"], ["created_at", 2016-10-08 17:25:16 UTC], ["updated_at", 2016-10-08 17:25:16 UTC], ["first_name", "Barton"], ["last_name", "Jast"], ["home_city", "East Fordhaven"], ["favorite_city", "North Kenview"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
