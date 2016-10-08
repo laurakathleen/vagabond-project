@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'posts/index'
+  post '/posts', to: 'posts#create'
 
   get 'posts/show/:id', to: 'posts#show', as: 'post'
 
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get 'cities/index'
 
-  get 'cities/show'
+  get 'cities/show/:id', to: 'cities#show', as: 'city'
 
   get 'cities/new'
 

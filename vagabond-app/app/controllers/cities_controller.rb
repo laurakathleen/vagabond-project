@@ -3,6 +3,8 @@ class CitiesController < ApplicationController
   end
 
   def show
+    @city = City.find_by_id(params[:id])
+    @posts = @city.posts
   end
 
   def new
