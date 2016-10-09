@@ -1,4 +1,5 @@
 module SessionsHelper
+  @@city_id = nil
   def login(user)
     session[:user_id] = user.id
 
@@ -11,5 +12,13 @@ module SessionsHelper
 
   def logout
     @current_user = session[:user_id] = nil
+  end
+
+  def setCityId(city_id)
+    @@city_id = city_id
+  end
+
+  def getCityId
+    @@city_id
   end
 end
