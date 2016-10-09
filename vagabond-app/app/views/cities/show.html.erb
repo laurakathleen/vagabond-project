@@ -7,6 +7,6 @@
   	<p><%= post.post_content[0...140] + '....' %><%= link_to 'more', post %></p>
   </li>
 <% end %>
-<%= link_to 'more posts', '/cities/' + @city.url_display + '/' + (@page.to_i + 1).to_s %> 
+<%= link_to 'more posts', '/cities/' + @city.url_display + '/page/' + (@page.to_i + 1).to_s %> 
 </ul>
 <%= link_to 'Create Post', posts_new_path, data: {city: @city.id}%>
