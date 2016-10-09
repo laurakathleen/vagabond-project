@@ -22,6 +22,9 @@ Sign up
   <div>
     <%= f.text_field :favorite_city, placeholder: "Favorite City" %>
   </div>
+  <div>
+    <%= f.hidden_field :admin, value: false %>
+  </div>
 
   <%= f.submit "Sign Up" %>
 

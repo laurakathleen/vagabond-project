@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161009152058) do
+ActiveRecord::Schema.define(version: 20161009185554) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20161009152058) do
     t.string   "home_city"
     t.string   "favorite_city"
     t.string   "color_profile"
+    t.boolean  "admin"
   end
 
 end

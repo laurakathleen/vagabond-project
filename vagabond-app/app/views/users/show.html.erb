@@ -1,5 +1,8 @@
 <div>
-<% if @user == current_user %>
+<% if (current_user.admin) %>
+hasfdjkjasdfhlasdhfa
+<% end %>
+<% if (@user == current_user || current_user.admin )%>
   Welcome <%= @user.first_name %><%= @user.last_name%>
 
   <ul>
