@@ -4,7 +4,7 @@ class CitiesController < ApplicationController
   end
 
   def show
-    @city = City.find_by_id(params[:id])
+    @city = City.find_by(url_display: params[:city_url_display])
     @posts = @city.posts
   end
 

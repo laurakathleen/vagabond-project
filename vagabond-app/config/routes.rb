@@ -11,14 +11,14 @@ Rails.application.routes.draw do
 
   get 'cities', to: 'cities#index'
 
-  get 'cities/show/:id', to: 'cities#show', as: 'city'
 
   get 'cities/new'
+  get 'cities/:city_url_display', to: 'cities#show', as: 'city'
 
   root to: 'users#index'
 
 
-  get '/users', to: 'users#index', as: 'users'
+
   get '/users/new', to: 'users#new', as: 'new_user'
   post '/users', to: 'users#create'
   get '/users/:id', to:'users#show', as: 'user'

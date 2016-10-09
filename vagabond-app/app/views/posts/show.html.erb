@@ -2,7 +2,7 @@
 
 <h1><%= @post.post_title %></h1><br>
 <h3>poster: <%= link_to @user.first_name, @user %>, 
-city: <%= link_to @post.city.city_name, @post.city %></h3>
+city: <%= link_to @post.city.city_name, '/cities/' + @post.city.url_display %></h3>
 <br><%= @post.post_content %>
 
 <%= button_to 'Delete Post', post_path(@post), method: :delete%>

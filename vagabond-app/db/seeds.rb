@@ -9,9 +9,9 @@ p "Hello from seeds.rb"
 User.destroy_all
 Post.destroy_all
 City.destroy_all
-City.create(city_name: 'San Francisco')
-City.create(city_name: 'London')
-City.create(city_name: 'Gibraltar')
+City.create(city_name: 'San Francisco', url_display: 'san-francisco')
+City.create(city_name: 'London', url_display: 'london')
+City.create(city_name: 'Gibraltar', url_display: 'girbaltar')
 # test = User.create({first_name: 'test', last_name: 'test', email: 'test@test.com', password: 'test', current_city: 'testing city', home_city: 'testing city', favorite_city: 'testing city'})
 # test_post = Post.create({post_title: "Test Title", post_content: 'Test content'})
 
@@ -20,10 +20,12 @@ users_data = []
 posts_data = []
 	
 10.times do 
+	first_name = FFaker::Name.first_name
+	last_name = FFaker::Name.last_name
 	users_data << {
-		first_name: FFaker::Name.first_name,
-		last_name: FFaker::Name.last_name,
-		email: FFaker::Internet.safe_email,
+		first_name: first_name,
+		last_name: last_name,
+		email: "#{first_name}@#{last_name}.com",
 		password: 'test',
 		current_city: FFaker::Address.city,
 		home_city: FFaker::Address.city,
@@ -36,7 +38,7 @@ for user_data in users_data
 	5.times do
 		new_user.posts << Post.create({
 			post_title: FFaker::HipsterIpsum.word,
-			post_content: "#{FFaker::HipsterIpsum.paragraph}"*5,
+			post_content: "#{FFaker::HipsterIpsum.paragraph}" + "#{FFaker::HipsterIpsum.paragraph}" + "#{FFaker::HipsterIpsum.paragraph}"+ "#{FFaker::HipsterIpsum.paragraph}"+ "#{FFaker::HipsterIpsum.paragraph}",
 			user_id: new_user.id,
 			city_id: City.first.id
 		})
@@ -44,7 +46,7 @@ for user_data in users_data
 	3.times do
 		new_user.posts << Post.create({
 			post_title: FFaker::HipsterIpsum.word,
-			post_content: "#{FFaker::HipsterIpsum.paragraph}"*8,
+			post_content: "#{FFaker::HipsterIpsum.paragraph}" + "#{FFaker::HipsterIpsum.paragraph}" + "#{FFaker::HipsterIpsum.paragraph}"+ "#{FFaker::HipsterIpsum.paragraph}"+ "#{FFaker::HipsterIpsum.paragraph}",
 			user_id: new_user.id,
 			city_id: City.second.id
 		})
@@ -52,7 +54,7 @@ for user_data in users_data
 	2.times do
 		new_user.posts << Post.create({
 			post_title: FFaker::HipsterIpsum.word,
-			post_content: "#{FFaker::HipsterIpsum.paragraph}"*8,
+			post_content: "#{FFaker::HipsterIpsum.paragraph}" + "#{FFaker::HipsterIpsum.paragraph}" + "#{FFaker::HipsterIpsum.paragraph}"+ "#{FFaker::HipsterIpsum.paragraph}"+ "#{FFaker::HipsterIpsum.paragraph}",
 			user_id: new_user.id,
 			city_id: City.third.id
 		})
