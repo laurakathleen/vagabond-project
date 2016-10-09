@@ -14,16 +14,87 @@
           
 
   </head>
+<style>
 
+  #city-img {
+    top:0;
+    position:fixed;
+    width: 100%;
+    height: 100vh;
+    -webkit-filter:brightness(50%);
+    -moz-filter:brightness(50%);
+    filter:url(#brightness);
+    filter:brightness(50%);
+    margin-bottom: -100vh;
+    z-index: -1;
+  }
+
+  .cover-up {
+    background-color: rgba(255,255,255,0.85);
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  .container {
+    z-index: 0;
+    position: relative;
+  }
+
+  #new-post-form {
+    z-index: 1;
+    text-align: center;
+    margin: -400px auto;
+    padding-top: 6%;
+    justify-content: center;
+    width: 50%;
+    height: 220px;
+  }
+
+  #new-post {
+    background-color: rgba(255,255,255,0.5);
+  }
+
+  #login-logout-bar {
+    position: fixed;
+  }
+
+  .post-div {
+    color: black;
+  }
+
+  .input-field label {
+     color: red;
+     text-align: center; 
+   }
+
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid red;
+     box-shadow: 0 1px 0 0 red;
+   }
+
+  .btn {
+    margin: 0 auto;
+    background-color: black;
+    color: grey;
+  }
+
+  .btn:hover {
+    background-color: grey;
+    color: black;
+  }
+
+</style>
   <body class="
               <% if current_user %>
                 <%= current_user.color_profile %>
               <% end %>
               ">
+              
     <% flash.each do |name, msg| %>
       <p><small> <%= msg %> </small></p>
     <% end %>
-    <div>
+    <div id="login-logout-bar">
       <ul>
         <% if current_user %>
           <li><%= link_to "Profile", user_path(current_user) %></li>
@@ -34,6 +105,11 @@
         <% end %>
       </ul>
     </div>
-    <%= yield %>
+    <%= image_tag "https://static.pexels.com/photos/28184/pexels-photo-28184.jpg", id: "city-img" %>
+    <div class="container">
+      <div class="cover-up">
+      <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
