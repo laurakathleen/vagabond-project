@@ -5,7 +5,7 @@ class CitiesController < ApplicationController
 
   def show
     @city = City.find_by(url_display: params[:city_url_display])
-    @posts = @city.posts
+    @posts = @city.posts.all[0..10]
   end
 
   def new
