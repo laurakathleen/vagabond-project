@@ -8,7 +8,11 @@
 
   </head>
 
-  <body>
+  <body class="
+              <% if current_user %>
+                <%= current_user.color_profile %>
+              <% end %>
+              ">
     <% flash.each do |name, msg| %>
       <p><small> <%= msg %> </small></p>
     <% end %>

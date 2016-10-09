@@ -9,16 +9,18 @@ Rails.application.routes.draw do
   patch 'posts/show/:post_id', to: 'posts#update'
   delete 'posts/show/:post_id', to: 'posts#destroy'
 
-  get 'cities/index'
+  get 'cities', to: 'cities#index'
 
-  get 'cities/show/:id', to: 'cities#show', as: 'city'
 
   get 'cities/new'
+  get 'cities/:city_url_display', to: 'cities#show', as: 'city'
+  get 'cities/:city_url_display/page/:page', to: 'cities#show'
+
 
   root to: 'users#index'
 
 
-  get '/users', to: 'users#index', as: 'users'
+
   get '/users/new', to: 'users#new', as: 'new_user'
   post '/users', to: 'users#create'
   get '/users/:id', to:'users#show', as: 'user'

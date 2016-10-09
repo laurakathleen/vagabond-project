@@ -22,6 +22,11 @@ Edit
   <div>
     <%= f.text_field :favorite_city, placeholder: "Favorite City" %>
   </div>
+  <% if current_user.admin %>
+    <div>
+     Admin Priv: <%= f.check_box :admin %>
+    </div>
+  <% end %>
 
   <%= f.submit "Edit" %>
 

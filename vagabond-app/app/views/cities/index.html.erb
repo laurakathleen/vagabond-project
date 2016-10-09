@@ -1,2 +1,27 @@
-<h1>Cities#index</h1>
-<p>Find me in app/views/cities/index.html.erb</p>
+
+<% if current_user && current_user.admin %>
+	<%= link_to "Add City", cities_new_path %>
+<% end %>
+<% if !current_user && (current_user && !current_user.admin) %>
+	<%= link_to "Suggest New City", cities_suggest_path %>
+<% end %>
+
+<h1>Current Nomad Cities:</h1>
+<ul>
+	<% for city in @cities %>
+		<li><h1><%= link_to city.city_name, '/cities/' + city.url_display %></h1>
+
+			
+			<% for post in city.posts[0..9] %>
+				<div>
+					<h4><%= link_to post.post_title, post %> 
+					- <%= link_to post.user.first_name + ' ' + post.user.last_name, post.user %></h4>
+					<p><%= post.post_content.split('')[0..999].join('') + '...' %>
+					<%= link_to "more", post %>
+					</p>
+				</div>
+			<% end %>
+		</li>
+		
+	<% end %>
+</ul>

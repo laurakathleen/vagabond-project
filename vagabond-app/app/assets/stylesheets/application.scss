@@ -13,4 +13,9 @@
  *
  *= require_tree .
  *= require_self
+ *= require style
  */
+
+.blue-color-profile {
+	background-color: blue;
+}
