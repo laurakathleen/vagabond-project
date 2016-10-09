@@ -36,7 +36,7 @@ for user_data in users_data
 	5.times do
 		new_user.posts << Post.create({
 			post_title: FFaker::HipsterIpsum.word,
-			post_content: FFaker::HipsterIpsum.paragraph,
+			post_content: "#{FFaker::HipsterIpsum.paragraph}"*5,
 			user_id: new_user.id,
 			city_id: City.first.id
 		})
@@ -44,7 +44,7 @@ for user_data in users_data
 	3.times do
 		new_user.posts << Post.create({
 			post_title: FFaker::HipsterIpsum.word,
-			post_content: FFaker::HipsterIpsum.paragraph,
+			post_content: "#{FFaker::HipsterIpsum.paragraph}"*8,
 			user_id: new_user.id,
 			city_id: City.second.id
 		})
@@ -52,7 +52,7 @@ for user_data in users_data
 	2.times do
 		new_user.posts << Post.create({
 			post_title: FFaker::HipsterIpsum.word,
-			post_content: FFaker::HipsterIpsum.paragraph,
+			post_content: "#{FFaker::HipsterIpsum.paragraph}"*8,
 			user_id: new_user.id,
 			city_id: City.third.id
 		})
