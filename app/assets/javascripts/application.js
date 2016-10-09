@@ -12,14 +12,16 @@
 //
 //= require jquery
 //= require plswork
-
-
+ 
 
 $(document).ready(function() {
   console.log('Sanity');
+  $('.parallax').parallax();
   $('a').hover(function() {
     console.log('hovering');
+  $('select').material_select();
   });
 });
+
 
 console.log('anything');
