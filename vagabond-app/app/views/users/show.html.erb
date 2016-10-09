@@ -1,5 +1,7 @@
 <div>
+<% if @user == current_user %>
   Welcome <%= @user.first_name %><%= @user.last_name%>
+
   <ul>
     <li>Current City: <%=@user.current_city%></li>
     <li>Home City: <%=@user.home_city%></li>
@@ -7,12 +9,18 @@
     <li>Date: <%=@user.created_at%></li>
   <ul>
 
+
   <%= link_to "Edit Profile", edit_user_path %>
   <i class="large material-icons">insert_chart</i>
-
-
-  <% for post in @posts %>
-	<%= link_to post.post_title, '/posts/show/' + post.id.to_s %>
+<% end %>
+  <br><br>
+  <% if @user != current_user %>
+    <h1>Profile for <%= @user.first_name %> <%= @user.last_name %></h1>
   <% end %>
-
+  <h2> Posts </h2>
+  <ul>
+  <% for post in @posts %>
+	<li><%= post.city.city_name %>: <%= link_to post.post_title, '/posts/show/' + post.id.to_s %></li>
+  <% end %>
+  </ul>
 </div>
