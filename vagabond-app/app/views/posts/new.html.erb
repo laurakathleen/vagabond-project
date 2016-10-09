@@ -2,7 +2,7 @@
 
 <p></p>
 Add New Post
-
+<% if current_user %>
 <%= form_for @post do |f| %>
   <div>
     <%= f.text_field :post_title, placeholder: "Title" %>
@@ -19,4 +19,5 @@ Add New Post
 
   <%= f.submit "Create Post" %>
 
+<% end %>
 <% end %>
