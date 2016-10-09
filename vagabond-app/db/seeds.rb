@@ -19,7 +19,7 @@ City.create(city_name: 'Gibraltar', url_display: 'girbaltar')
 users_data = []
 posts_data = []
 	
-10.times do 
+100.times do 
 	first_name = FFaker::Name.first_name
 	last_name = FFaker::Name.last_name
 	users_data << {

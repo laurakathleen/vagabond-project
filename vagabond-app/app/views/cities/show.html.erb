@@ -4,8 +4,9 @@
 <ul>
 <% for post in @posts %>
   <li><%= link_to post.post_title, '/posts/show/' + post.id.to_s %> - by <%= link_to post.user.first_name + ' ' + post.user.last_name %>
-  	<p><%= post.post_content[0...500] + '....' %><%= link_to 'more', post %></p>
+  	<p><%= post.post_content[0...140] + '....' %><%= link_to 'more', post %></p>
   </li>
 <% end %>
+<%= link_to 'more posts', '/cities/' + @city.url_display + '/' + (@page.to_i + 1).to_s %> 
 </ul>
 <%= link_to 'Create Post', posts_new_path, data: {city: @city.id}%>

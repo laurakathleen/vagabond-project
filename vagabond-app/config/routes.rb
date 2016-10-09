@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
 
   get 'cities/new'
-  get 'cities/:city_url_display', to: 'cities#show', as: 'city'
+  get 'cities/:city_url_display/:page', to: 'cities#show', as: 'city'
 
   root to: 'users#index'
 
