@@ -9,10 +9,12 @@
 
   <%= link_to "Edit Profile", edit_user_path %>
   <i class="large material-icons">insert_chart</i>
-
-
+  
+  <br><br>
+  <h2> Posts </h2>
+  <ul>
   <% for post in @posts %>
-	<%= link_to post.post_title, '/posts/show/' + post.id.to_s %>
+	<li><%= post.city.city_name %>: <%= link_to post.post_title, '/posts/show/' + post.id.to_s %></li>
   <% end %>
-
+  </ul>
 </div>
