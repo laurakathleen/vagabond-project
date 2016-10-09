@@ -1,8 +1,8 @@
 
-<% if current_user.admin %>
+<% if current_user && current_user.admin %>
 	<%= link_to "Add City", cities_new_path %>
 <% end %>
-<% if !current_user.admin %>
+<% if !current_user && (current_user && !current_user.admin) %>
 	<%= link_to "Suggest New City", cities_suggest_path %>
 <% end %>
 
