@@ -1,11 +1,62 @@
 <h1>Cities#show</h1>
-<p>Find me in app/views/cities/show.html.erb</p>
-<p><%= @city.city_name %></p>
-  <img src=<%= @city.image_url %>>
+<img src="https://static.pexels.com/photos/28184/pexels-photo-28184.jpg" id="city-img">
 
-<% for post in @posts %>
-  <%= link_to post.post_title, '/posts/show/' + post.id.to_s %>
-<% end %>
 <%= link_to 'Create Post', posts_new_path, :data => {:city => "test"}%>
+	  <p><%= @city_id %></p>
 
-<p><%=@city_id%></p>
+<h1 id="city-name"><%= @city.name %></h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col m6 offset-m3 city-comments">
+      <div class="card white-grey darken-1" id="city-posts">
+        <div class="content card-content black-text" id="city-post-cards">
+	      <p><%= @city.city_name %></p>
+  		  <img src=<%= @city.image_url %>>
+  		  <% for post in @posts %>
+  		  <%= link_to post.post_title, '/posts/show/' + post.id.to_s %>
+		  <% end %>
+	    </div>
+	  </div>
+	</div>
+  </div>
+</div>
+
+
+
+<style>
+
+  #city-img {
+    width: 100%;
+    height: 100vh;
+    -webkit-filter:brightness(50%);
+    -moz-filter:brightness(50%);
+    filter:url(#brightness);
+    filter:brightness(50%);
+  }
+
+   #city-name {
+
+   }
+
+   .container {
+     z-index: 0;
+     position: relative;
+  }
+
+  #city-posts {
+     background-color: rgba(255,255,255,0.5);
+     width: 50%;
+     margin: 0 auto;
+  }
+
+  #city-post-cards {
+     z-index: 1;
+     text-align: center;
+     margin: -400px auto;
+     justify-content: center;
+     height: 150px;
+     color: black;
+  }
+
+</style>
