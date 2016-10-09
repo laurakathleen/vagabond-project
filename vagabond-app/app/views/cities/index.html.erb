@@ -10,10 +10,12 @@
 <ul>
 	<% for city in @cities %>
 		<li><h1><%= link_to city.city_name, '/cities/' + city.url_display %></h1>
+
 			
 			<% for post in city.posts[0..9] %>
 				<div>
-					<h4><%= link_to post.post_title, post %></h4>
+					<h4><%= link_to post.post_title, post %> 
+					- <%= link_to post.user.first_name + ' ' + post.user.last_name, post.user %></h4>
 					<p><%= post.post_content.split('')[0..999].join('') + '...' %>
 					<%= link_to "more", post %>
 					</p>
