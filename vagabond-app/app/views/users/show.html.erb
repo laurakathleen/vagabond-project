@@ -1,5 +1,7 @@
 <div>
+<% if @user == current_user %>
   Welcome <%= @user.first_name %><%= @user.last_name%>
+<% end %>
   <ul>
     <li>Current City: <%=@user.current_city%></li>
     <li>Home City: <%=@user.home_city%></li>
