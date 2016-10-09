@@ -6,7 +6,7 @@ city: <%= link_to @post.city.city_name, '/cities/' + @post.city.url_display %></
 <br><%= @post.post_content %>
 
 
-<% if @post.user == current_user || current_user.admin %>
+<% if @current_user && (@post.user == current_user || current_user.admin) %>
 	<%= button_to 'Delete Post', post_path(@post), method: :delete%>
 
 <% end %>
