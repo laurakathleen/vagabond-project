@@ -22,4 +22,3 @@ module SessionsHelper
     @@city_id
   end
 end
-#test
