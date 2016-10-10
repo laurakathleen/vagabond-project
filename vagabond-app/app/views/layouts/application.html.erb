@@ -15,6 +15,16 @@
 
   </head>
 <style>
+  body * {
+    color: black;
+  }
+
+  ul {
+    display: inline;
+  }
+  a {
+    display: inline;
+  }
 
   #city-img {
     top:0;
@@ -58,6 +68,12 @@
     position: fixed;
   }
 
+  .login-div {
+    position: relative;
+    margin-top:200px;
+    margin-bottom: 200px;
+  }
+
   .post-div {
     color: black;
   }
@@ -84,6 +100,9 @@
     color: black;
   }
 
+  nav {
+    background-color: rgba(0,0,0,0);
+  }
 </style>
   <body class="
               <% if current_user %>
@@ -91,20 +110,22 @@
               <% end %>
               ">
               
-    <% flash.each do |name, msg| %>
-      <p><small> <%= msg %> </small></p>
-    <% end %>
-    <div id="login-logout-bar">
-      <ul>
-        <% if current_user %>
-          <li><%= link_to "Profile", user_path(current_user) %></li>
-          <li><%= link_to "Log Out", logout_path %></li>
-        <% else %>
-          <li><%= link_to "Create Account", new_user_path %></li>
-          <li><%= link_to "Log In", login_path %></li>
-        <% end %>
-      </ul>
-    </div>
+    
+    <nav>
+      <div class="nav-wrapper grey">
+        <a href="#" class="brand-logo right"> Hidden Forest</a>
+           <ul class="left hide-on-med-and-down">
+            <% if current_user %>
+              <li><%= link_to "Profile", user_path(current_user)%>     
+              </li>
+              <li><%= link_to "Log Out", logout_path %></li>
+            <% else %>
+              <li><%= link_to "Create Account", new_user_path %></li>
+              <li><%= link_to "Log In", login_path %></li>
+            <% end %>
+          </ul> 
+      </div>
+    <nav>
     <%= image_tag "https://static.pexels.com/photos/28184/pexels-photo-28184.jpg", id: "city-img" %>
     <div class="container">
       <div class="cover-up">
