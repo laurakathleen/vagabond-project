@@ -1,4 +1,8 @@
 class CitiesController < ApplicationController
+  def create
+
+  end
+
   def index
   	@cities = City.all
   end
@@ -18,5 +22,10 @@ class CitiesController < ApplicationController
   end
 
   def new
+  end
+
+  private
+  def post_params
+    params.require(:post).permit(:user_id, :city_id, :post_title, :post_content)
   end
 end
