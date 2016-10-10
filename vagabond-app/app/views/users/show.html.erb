@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <style>
   #user-show-container {
     height: 80%;
@@ -24,9 +24,7 @@
   hr {
     border: 1px solid #9e9e9e;
   }
-  a {
-    text-decoration: none
-  }
+
 </style>
 <div id="user-show-container" class="container">
   <div id="profile-card" class="row card">
@@ -52,34 +50,5 @@
     </div>
   </div>
 </div>
-Contact GitHub API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Status Help
 
-<div>
-<% if (@user == current_user || current_user.admin )%>
-  Welcome <%= @user.first_name %><%= @user.last_name%>
-  <ul>
-    <li>Current City: <%=@user.current_city%></li>
-    <li>Home City: <%=@user.home_city%></li>
-    <li>Favorite City: <%=@user.favorite_city%></li>
-    <li>Date: <%=@user.created_at%></li>
-  <ul>
-
-
-  <%= link_to "Edit Profile", edit_user_path %>
-  <i class="large material-icons">insert_chart</i>
-<% end %>
-  <br><br>
-  <% if @user != current_user %>
-    <h1>Profile for <%= @user.first_name %> <%= @user.last_name %></h1>
-  <% end %>
-  <h2> Posts </h2>
-  <ul>
-  <% for post in @posts %>
-	<li><%= post.city.city_name %>: <%= link_to post.post_title, '/posts/show/' + post.id.to_s %></li>
-  <% end %>
-
-
-  </ul>
-</div>
 

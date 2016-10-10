@@ -26,6 +26,9 @@
             <div class="col s6 offset-s3">
               <%= f.text_field :favorite_city, placeholder: "Favorite City" %>
             </div>
+             <div>
+    <%= f.hidden_field :admin, value: false %>
+  </div>
           </div>  
             <center><%= f.submit "Sign Up", :class => 'btn waves-effect waves light grey' %></center>
         <% end %>
@@ -41,7 +44,7 @@
   }
 
   #new-form {
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,0.85);
   }
 
   .new-form-div {
@@ -72,9 +75,7 @@
   :-ms-input-placeholder { /* IE 10+ */
     color: #f44336;
   }
-  <div>
-    <%= f.hidden_field :admin, value: false %>
-  </div>
+ 
 
   :-moz-placeholder { /* Firefox 18- */
     color: #f44336;
