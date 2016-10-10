@@ -5,8 +5,9 @@
     <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'https://fonts.googleapis.com/icon?family=Material+Icons' %>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
 
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => "reload" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => "reload" %>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
 
@@ -119,8 +120,8 @@
 
     <nav>
       <div class="nav-wrapper grey">
-        <a href="#" class="brand-logo right"> Hidden Forest</a>
-           <ul class="left hide-on-med-and-down">
+        <a href="#" class="brand-logo left"> Hidden Forest</a>
+           <ul class="right hide-on-med-and-down">
             <% if current_user %>
               <li><%= link_to "Profile", user_path(current_user)%>     
               </li>

@@ -11,7 +11,9 @@
 // about supported directives.
 //
 //= require jquery
-//= require plswork
+//= require jquery_ujs
+//= require turbolinks
+//= require_tree .
  
 
 $(document).ready(function() {
