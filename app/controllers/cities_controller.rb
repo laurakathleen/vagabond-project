@@ -5,7 +5,6 @@ class CitiesController < ApplicationController
 
   def show
     @city = City.find_by(url_display: params[:city_url_display])
-    setCityId(params[:id])
     if params[:page]
       @page = params[:page]
     else
