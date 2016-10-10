@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require plswork
+//= require turbolinks
  
 
 $(document).ready(function() {
