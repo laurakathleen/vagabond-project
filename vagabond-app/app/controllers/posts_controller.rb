@@ -11,7 +11,6 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @dog = @current_user
   end
 
   def edit

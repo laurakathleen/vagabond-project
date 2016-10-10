@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>VagabondApp</title>
+    <title>Hidden Forrest</title>
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag 'https://fonts.googleapis.com/icon?family=Material+Icons' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
 
   </head>
-
-  <body>
-    <% flash.each do |name, msg| %>
+<!--   <% flash.each do |name, msg| %>
       <p><small> <%= msg %> </small></p>
-    <% end %>
-    <div>
-      <ul>
-        <% if current_user %>
-          <li><%= link_to "Profile", user_path(current_user) %></li>
-          <li><%= link_to "Log Out", logout_path %></li>
-        <% else %>
-          <li><%= link_to "Create Account", new_user_path %></li>
-          <li><%= link_to "Log In", login_path %></li>
-        <% end %>
-      </ul>
-    </div>
-    <%= yield %>
+  <% end %> -->
+  <body>
+  <header>
+    <nav>
+      <div class="nav-wrapper grey">
+        <a href="#" class="brand-logo right"> Hidden Forest</a>
+           <ul class="left hide-on-med-and-down">
+            <% if current_user %>
+              <li><%= link_to "Profile", user_path(current_user)%>     
+              </li>
+              <li><%= link_to "Log Out", logout_path %></li>
+            <% else %>
+              <li><%= link_to "Create Account", new_user_path %></li>
+              <li><%= link_to "Log In", login_path %></li>
+            <% end %>
+          </ul> 
+      </div>
+    <nav>
+  </header>
+      <%= yield %>
   </body>
 </html>
