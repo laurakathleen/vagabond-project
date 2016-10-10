@@ -1,12 +1,21 @@
 
+<div class="row">
+  <div class="col m8 offset-m2">
+    <div class="card white-grey darken-1" id="show-post" id="show-post">
+      <div class="card-content black-text post-form" id="show-post-form">
+        <div class="row post-div input-field showing">
+		  <h1 id="post-title-heading"><%= @post.post_title %> - <%= link_to @post.city.city_name, '/cities/' + @post.city.url_display %></h1>
+		  <h3 id="poster-heading">Posted by <%= @user.first_name %><br><h6 class="see-all">Click for all posts by <span class="see-all"><%= link_to @user.first_name, @user, {:style => 'color:red;', :class => "css_class"} %></span>   |   Click for all <span class="see-all"><%= link_to @post.city.city_name, '/cities/' + @post.city.url_display, {:style => 'color:red;', :class => "css_class"} %> posts</h6></span>
+		  <%= @post.post_content %>
+	
 
-<h1><%= @post.post_title %> - <%= link_to @post.city.city_name, '/cities/' + @post.city.url_display %></h1><br>
-<h3>poster: <%= link_to @user.first_name, @user %>, 
-city: <%= link_to @post.city.city_name, '/cities/' + @post.city.url_display %></h3>
-<br><%= @post.post_content %>
 
+		  <% if @current_user && (@post.user == current_user || current_user.admin) %>
+				<%= button_to 'Delete Post', post_path(@post), method: :delete%>
 
-<% if @current_user && (@post.user == current_user || current_user.admin) %>
-	<%= button_to 'Delete Post', post_path(@post), method: :delete%>
-
-<% end %>
+		  <% end %>
+	    </div>
+      </div>
+    </div>
+  </div>
+</div>
