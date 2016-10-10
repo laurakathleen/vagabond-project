@@ -4,8 +4,8 @@
     <div class="col s6 offset-m5">
       <div class="card white-grey darken-1" id="new-form">
         <%= form_for @user do |f| %>
-          <div class="row" id="new-form">
-            <div class="col s6 offset-s6">
+          <div class="row">
+            <div class="col s6 offset-s3">
               <%= f.text_field :first_name, placeholder: "First name" %>
             </div>
             <div class="col s6 offset-s3">
@@ -41,7 +41,7 @@
   }
 
   #new-form {
-    background-color: rgba(255,255,255,0.3);
+    background-color: rgba(255,255,255,0.5);
   }
 
   .new-form-div {
