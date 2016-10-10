@@ -1,3 +1,49 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.container {
+    z-index: 0;
+    position: relative;
+  }
+
+  #new-post-form {
+    z-index: 1;
+    text-align: center;
+    padding-top: 6%;
+    justify-content: center;
+    width: 50%;
+    height: 220px;
+  }
+
+  #new-post {
+    background-color: rgba(255,255,255,0.5);
+  }
+
+  .post-div {
+    color: black;
+  }
+
+  .input-field label {
+     color: red;
+     text-align: center; 
+   }
+
+
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid red;
+     box-shadow: 0 1px 0 0 red;
+   }
+
+   .create-btn {
+    margin: 0 auto;
+    background-color: blue;
+    color: blue;
+  }
+
+  .create-btn:hover {
+    background-color: grey;
+    color: black;
+  }
