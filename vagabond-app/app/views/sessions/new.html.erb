@@ -1,9 +1,63 @@
-<%= form_for @user, url: "/sessions", method: "post" do |f| %>
-  <div>
-    <%= f.email_field :email, placeholder: "Email" %>
-  </div>
-  <div>
-    <%= f.password_field :password, placeholder: "Password" %>
-  </div>
-  <%= f.submit "Log In" %>
-<% end %>
+<div class="container">
+<img id="background-img" src="http://img1.mxstatic.com/wallpapers/943fbf40f69f482bcbec031eec3e0050_large.jpeg">
+	<div class="row">
+		<div class="col s6 offset-m5">
+			<div class="card white-grey darken-1" id="login-form">
+			<%= form_for @user, url: "/sessions", method: "post" do |f| %>
+				<div class="row login-div input-field">
+					<div class="row col s6 offset-s3">
+				    	<%= f.email_field :email, placeholder: "Email" %>
+				    </div>
+				    <div class="row col s6 offset-s3">
+				    	<%= f.password_field :password, placeholder: "Password" %>
+				    </div>
+				    <div class="row col s6 offset-s3">
+				  		<%= f.submit "Log In", :class => 'btn waves-effect waves light grey'%>
+				  	</div>
+				</div>
+			<% end %>
+			</div>
+		</div>
+	</div>	
+</div>
+
+
+<style>
+	.container {
+		position: absolute;
+	}
+
+	#login-form {
+		background-color: rgba(255,255,255,0.3);
+	}
+
+	.login-div {
+		position: relative;
+		text-align: center;
+		z-index: 0;
+		margin-top: 200px;
+		margin-left: 200px;
+	}
+
+	#background-img {
+		background-size: cover;
+		-webkit-filter:brightness(80%);
+		-moz-filter:brightness(80%);
+		filter:url(#brightness);
+		filter:brightness(80%);
+		position: absolute;
+	}
+
+	::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+		color: #f44336;
+	}
+	::-moz-placeholder { /* Firefox 19+ */
+		color: #f44336;
+	}
+	:-ms-input-placeholder { /* IE 10+ */
+		color: #f44336;
+	}
+	:-moz-placeholder { /* Firefox 18- */
+		color: #f44336;
+	}
+</style>

@@ -1,28 +1,80 @@
-Sign up
+<div class="container">
+<img id="background-img" src="http://img1.mxstatic.com/wallpapers/943fbf40f69f482bcbec031eec3e0050_large.jpeg">
+  <div class="row">
+    <div class="col s6 offset-m5">
+      <div class="card white-grey darken-1" id="new-form">
+        <%= form_for @user do |f| %>
+          <div class="row" id="new-form">
+            <div class="col s6 offset-s6">
+              <%= f.text_field :first_name, placeholder: "First name" %>
+            </div>
+            <div class="col s6 offset-s3">
+              <%= f.text_field :last_name, placeholder: "Last name" %>
+            </div>
+            <div class="col s6 offset-s3">
+              <%= f.email_field :email, placeholder: "Email" %>
+            </div>
+            <div class="col s6 offset-s3">
+              <%= f.password_field :password, placeholder: "Password" %>
+            </div>
+            <div class="col s6 offset-s3">
+              <%= f.text_field :current_city, placeholder: "Current City" %>
+            </div>
+            <div class="col s6 offset-s3">
+              <%= f.text_field :home_city, placeholder: "Home City" %>
+            </div>
+            <div class="col s6 offset-s3">
+              <%= f.text_field :favorite_city, placeholder: "Favorite City" %>
+            </div>
+          </div>  
+            <center><%= f.submit "Sign Up", :class => 'btn waves-effect waves light grey' %></center>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= form_for @user do |f| %>
-  <div>
-    <%= f.text_field :first_name, placeholder: "First name" %>
-  </div>
-  <div>
-    <%= f.text_field :last_name, placeholder: "Last name" %>
-  </div>
-  <div>
-    <%= f.email_field :email, placeholder: "email" %>
-  </div>
-  <div>
-    <%= f.password_field :password, placeholder: "password" %>
-  </div>
-  <div>
-    <%= f.text_field :current_city, placeholder: "Current City" %>
-  </div>
-  <div>
-    <%= f.text_field :home_city, placeholder: "Home City" %>
-  </div>
-  <div>
-    <%= f.text_field :favorite_city, placeholder: "Favorite City" %>
-  </div>
+<style>
 
-  <%= f.submit "Sign Up" %>
+  .container {
+    position: absolute;
+  }
 
-<% end %>
+  #new-form {
+    background-color: rgba(255,255,255,0.3);
+  }
+
+  .new-form-div {
+    position: relative;
+    text-align: center;
+    z-index: 0;
+    margin-top: 200px;
+    margin-left: 200px;
+  }
+
+  #background-img {
+    background-size: cover;
+    -webkit-filter:brightness(80%);
+    -moz-filter:brightness(80%);
+    filter:url(#brightness);
+    filter:brightness(80%);
+    position: absolute;
+  }
+
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #f44336;
+  }
+
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: #f44336;
+  }
+
+  :-ms-input-placeholder { /* IE 10+ */
+    color: #f44336;
+  }
+
+  :-moz-placeholder { /* Firefox 18- */
+    color: #f44336;
+  }
+
+</style>
