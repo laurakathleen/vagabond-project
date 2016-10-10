@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>VagabondApp</title>
+    <title>Hidden Forrest</title>
     <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'https://fonts.googleapis.com/icon?family=Material+Icons' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
@@ -14,6 +15,7 @@
           
 
   </head>
+
 <style>
   body * {
     color: black;
@@ -111,6 +113,10 @@
               ">
               
     
+
+  <body>
+  <header>
+
     <nav>
       <div class="nav-wrapper grey">
         <a href="#" class="brand-logo right"> Hidden Forest</a>
@@ -124,13 +130,17 @@
               <li><%= link_to "Log In", login_path %></li>
             <% end %>
           </ul> 
+
       </div>
     <nav>
     <%= image_tag "https://static.pexels.com/photos/28184/pexels-photo-28184.jpg", id: "city-img" %>
     <div class="container">
       <div class="cover-up">
       <%= yield %>
+
       </div>
-    </div>
+    <nav>
+  </header>
+      <%= yield %>
   </body>
 </html>

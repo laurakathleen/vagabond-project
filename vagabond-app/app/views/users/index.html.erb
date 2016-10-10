@@ -1,5 +1,18 @@
-<h1>SLAM!</h1>
+<img id="background-img" src="http://img1.mxstatic.com/wallpapers/943fbf40f69f482bcbec031eec3e0050_large.jpeg">
 
+
+
+
+<style>
+#background-img {
+	width: 100%;
+	height: 100vh;
+	-webkit-filter:brightness(80%);
+	-moz-filter:brightness(80%);
+	filter:url(#brightness);
+	filter:brightness(80%);
+ }
+</style>
 <div>
 	<ul>
  	 	<% for user in @users %>
@@ -7,3 +20,4 @@
  	 	<% end %>
   	</ul>
 </div>
+
