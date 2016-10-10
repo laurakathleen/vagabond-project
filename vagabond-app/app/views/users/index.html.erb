@@ -2,6 +2,7 @@
 
 
 
+
 <style>
 #background-img {
 	width: 100%;
@@ -12,3 +13,11 @@
 	filter:brightness(80%);
  }
 </style>
+<div>
+	<ul>
+ 	 	<% for user in @users %>
+  			<li><%= link_to user.first_name + ' ' + user.last_name, user %></li>
+ 	 	<% end %>
+  	</ul>
+</div>
+
