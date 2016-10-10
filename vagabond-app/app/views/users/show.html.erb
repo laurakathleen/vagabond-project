@@ -1,29 +1,55 @@
-<div>
-<% if (current_user.admin) %>
-hasfdjkjasdfhlasdhfa
-<% end %>
-<% if (@user == current_user || current_user.admin )%>
-  Welcome <%= @user.first_name %><%= @user.last_name%>
+<style>
+  body {
+    background-color: #ffcdd2;;
+  }
+  #user-show-container {
+    height: 80%;
+  }
+  #profile-card {
+    height: 100%;
+  }
+  #profile-info {
+    text-align: center;
+    height: 100%;
+    background-color: #d32f2f;
+  }
+  #profile-name {
+    margin-top: 10%;
+  }
+  #posts-container {
+    height: 100%;
+    overflow: auto;
+  }
+  .post-content {
+    text-align: justify;
+  }
+  hr {
+    border: 1px solid #9e9e9e;
+  }
+</style>
+<div id="user-show-container" class="container">
+  <div id="profile-card" class="row card">
+      <div id="profile-info" class="col s6">
+        <h3 id="profile-name"><%= @user.first_name %> <%= @user.last_name%></h2>
+        <img id="profile-photo" class="circle responsive-img" src="http://placehold.it/350x350">
+            <ul>
+              <li><h4><%=@user.current_city%></h4></li>
+              <li><%= link_to "Edit Profile", edit_user_path %></li>
+            <ul>
+        </div>
 
-  <ul>
-    <li>Current City: <%=@user.current_city%></li>
-    <li>Home City: <%=@user.home_city%></li>
-    <li>Favorite City: <%=@user.favorite_city%></li>
-    <li>Date: <%=@user.created_at%></li>
-  <ul>
-
-
-  <%= link_to "Edit Profile", edit_user_path %>
-  <i class="large material-icons">insert_chart</i>
-<% end %>
-  <br><br>
-  <% if @user != current_user %>
-    <h1>Profile for <%= @user.first_name %> <%= @user.last_name %></h1>
-  <% end %>
-  <h2> Posts </h2>
-  <ul>
-  <% for post in @posts %>
-	<li><%= post.city.city_name %>: <%= link_to post.post_title, '/posts/show/' + post.id.to_s %></li>
-  <% end %>
-  </ul>
+    <div id="posts-container" class="col s6">
+      <ul>
+        <% for post in @posts %>
+        <li>
+           <h5><%= link_to post.post_title, '/posts/show/' + post.id.to_s %></h5>
+           <p class="post-content"><small><%= post.post_content[0...150] + '...' %></small></p>
+        </li>
+        <hr>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </div>
+Contact GitHub API Training Shop Blog About
+© 2016 GitHub, Inc. Terms Privacy Security Status Help
