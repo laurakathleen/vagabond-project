@@ -4,10 +4,20 @@
     <title>VagabondApp</title>
     <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
     <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
     <%= stylesheet_link_tag 'https://fonts.googleapis.com/icon?family=Material+Icons' %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 
   </head>
+  <style>
+    html, body {
+      height: 100%;
+    }
 
+    a {
+      color: #212121;
+    }
+  </style>
   <body>
     <% flash.each do |name, msg| %>
       <p><small> <%= msg %> </small></p>
