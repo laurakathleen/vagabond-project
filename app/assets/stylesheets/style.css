@@ -1,5 +1,9 @@
-	.container {
-		position: absolute;
+	body, html {
+		height: 100%;
+	}
+
+	#site-title {
+		margin-left: 20px;
 	}
 
 	#login-form {
@@ -61,7 +65,7 @@
 
   .input-field label {
      color: red;
-     text-align: center; 
+     text-align: center;
    }
 
    .input-field input[type=text]:focus {
@@ -83,4 +87,3 @@
   nav {
     background-color: rgba(0,0,0,0);
   }
-	

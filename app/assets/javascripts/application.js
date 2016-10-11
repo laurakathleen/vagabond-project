@@ -13,17 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require app
 //= require_tree .
- 
-
-$(document).ready(function() {
-  console.log('Sanity');
-  $('.parallax').parallax();
-  $('a').hover(function() {
-    console.log('hovering');
-  $('select').material_select();
-  });
-});
-
-
-console.log('anything');
