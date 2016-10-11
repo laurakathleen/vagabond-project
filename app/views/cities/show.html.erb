@@ -6,7 +6,11 @@
 		<div class="card white-grey darken-1">
 			<div class="card-content black-text">
 				<% setCityId(@city.id) %>
-				<h1><%= @city.city_name %></h1>
+				<h1><%= @city.city_name %> 
+					<% if current_user && current_user.admin && @city.status == nil %>
+						<%= link_to 'Approve City', city_approve_path %>
+					<% end %>							
+				</h1>
   
 				<ul>
 					<% if @posts %>

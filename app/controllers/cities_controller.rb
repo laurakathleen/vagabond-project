@@ -7,8 +7,22 @@ class CitiesController < ApplicationController
     redirect_to '/cities/' + @city.url_display
   end
 
+  def approve
+    @city = City.find_by(url_display: params[:city_url_display])
+    @city.status = 'approved'
+    @city.save
+  end
+
   def index
-  	@cities = City.all
+    @cities = []
+    for city in City.all
+      if city.status == "approved"
+        @cities << city
+      end
+  	end
+    if current_user && current_user.admin
+      @cities = City.all
+    end
   end
 
   def show

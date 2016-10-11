@@ -9,7 +9,14 @@
 <h1>Current Nomad Cities:</h1>
 <ul>
 	<% for city in @cities %>
-		<li><h1><%= link_to city.city_name, '/cities/' + city.url_display %></h1>
+		<li><h1><%= link_to city.city_name, '/cities/' + city.url_display %> 
+		
+			<% if current_user && current_user.admin && city.status == nil %>
+				 - unapproved
+			<% elsif current_user && current_user.admin %>
+				 - approved
+			<% end %>
+			</h1>
 
 			
 			<% for post in city.posts[0..9] %>
