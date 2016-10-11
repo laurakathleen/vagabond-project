@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function(event){
     /* console.log('script running');
      $('.parallax').parallax();
 
@@ -38,6 +38,7 @@ $(document).ready(function(){
        });
 
        $('.modal-trigger').leanModal();
+
 });
 
 /*function scrollCallback() {

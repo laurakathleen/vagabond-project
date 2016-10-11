@@ -1,4 +1,9 @@
 class CommentsController < ApplicationController
+
+	def index
+		@comments = Comment.all
+	end
+	
 	def create 
 		post = Post.find_by_id(params[:id])
 		@comment = Comment.new(comment_params)
@@ -6,21 +11,38 @@ class CommentsController < ApplicationController
 		if @comment.save
 			redirect_to post_path
 		else
-			debugger
 			redirect_to post_path(@post)
 		end
 	end
 
 
 	def show
+		@comments = Comment.all
 		@comment = Comment.find_by_id(params[:id])
 		@post = @comment.post
+
 	end
 
 	def new
 		@post_id = getPostId
 		@comment = Comment.new
 	end
+
+	def edit
+		@comment = Comment.find(params[:id])
+	end
+
+	def update
+		@comment = Comment.find(params[:id])
+		if @comment.update(comment_params)
+			redirect_to post_path(@post)
+		end
+	end
+
+	def destroy
+
+	end
+
 
 	private 
 	def comment_params
