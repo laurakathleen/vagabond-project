@@ -1,2 +1,17 @@
 <h1>Cities#new</h1>
 <p>Find me in app/views/cities/new.html.erb</p>
+<div class="row">
+	<div class="col m8 offset-m2">
+		<div class="card white-grey darken-1" id="new-post">
+			<div class="card-content black-test post-form">
+				<%= form_for @city do |f| %>
+				<div class="row post-div input-field">
+					<%= f.text_field :city_name, placeholder: "Title" %>
+					<%= f.text_field :image_url, placeholder: "Image Url" %>
+					<a class="waves-effect waves-light btn create-brn"><%= f.submit "Create Post" %></a>
+				</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
