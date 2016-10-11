@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function(event){
     /* console.log('script running');
      $('.parallax').parallax();
 
@@ -28,6 +28,10 @@ $(document).ready(function(){
 
          scrollTop = newScrollTop;
        });
+
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal-trigger').leanModal();
+    
 });
 
 /*function scrollCallback() {
