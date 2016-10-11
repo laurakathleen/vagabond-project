@@ -2,8 +2,8 @@
 <% if current_user && current_user.admin %>
 	<%= link_to "Add City", cities_new_path %>
 <% end %>
-<% if !current_user && (current_user && !current_user.admin) %>
-	<%= link_to "Suggest New City", cities_suggest_path %>
+<% if current_user && (current_user && !current_user.admin) %>
+	<%= link_to "Suggest New City", cities_new_path %>
 <% end %>
 
 <h1>Current Nomad Cities:</h1>

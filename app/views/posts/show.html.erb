@@ -1,10 +1,7 @@
 <%= image_tag "https://static.pexels.com/photos/28184/pexels-photo-28184.jpg", id: "city-img" %>
 
 
-<h1><%= @post.post_title %> - <%= link_to @post.city.city_name, '/cities/' + @post.city.url_display %></h1><br>
-<h3>poster: <%= link_to @user.first_name, @user %>,
-city: <%= link_to @post.city.city_name, '/cities/' + @post.city.url_display %></h3>
-<br><%= @post.post_content %>
+
 
 <div class="row">
   <div class="col m8 offset-m2">
