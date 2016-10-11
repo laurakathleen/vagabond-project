@@ -1,6 +1,10 @@
 class CitiesController < ApplicationController
   def create
-
+    # city_params[:url_display] = city_params[:city_name].parameterize(separator: '-')
+    @city = City.new(city_params)
+    @city.url_display = @city.city_name.parameterize(separator: '-')
+    @city.save
+    redirect_to '/cities/' + @city.url_display
   end
 
   def index
@@ -22,10 +26,11 @@ class CitiesController < ApplicationController
   end
 
   def new
+    @city = City.new
   end
 
   private
-  def post_params
-    params.require(:post).permit(:user_id, :city_id, :post_title, :post_content)
+  def city_params
+    params.require(:city).permit(:city_name, :url_display, :image_url)
   end
 end

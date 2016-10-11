@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get 'cities', to: 'cities#index'
 
-
+  post 'cities', to: 'cities#create'
   get 'cities/new'
   get 'cities/:city_url_display', to: 'cities#show', as: 'city'
   get 'cities/:city_url_display/page/:page', to: 'cities#show'

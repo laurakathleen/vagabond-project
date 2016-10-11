@@ -1,6 +1,6 @@
 <%= image_tag "https://static.pexels.com/photos/28184/pexels-photo-28184.jpg", id: "city-img" %>
 
-<p><%= @city_id %></p>
+
 <% if current_user %>
 
 
@@ -22,5 +22,12 @@
       </div>
     </div>
   </div>
-
+<% else %>
+<div class="row">
+  <div class="col m8 offset-m2">
+    <div class="card white-grey-darken-1">
+      <div class="card-content black-text">Please log in or create an account to post</div>
+    </div>
+  </div>
+</div>
 <%end%>
