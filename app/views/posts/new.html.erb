@@ -7,9 +7,9 @@ Add New Post
 
 
   <div class="row">
-    <div class="col m6 offset-m3">
+    <div class="col m8 offset-m2">
       <div class="card white-grey darken-1" id="new-post">
-        <div id="new-post-form" class="card-content black-text">
+        <div class="card-content black-text post-form">
         <%= form_for @post do |f| %>
           <div class="row post-div input-field">
             <%= f.text_field :post_title, placeholder: "Title" %>
