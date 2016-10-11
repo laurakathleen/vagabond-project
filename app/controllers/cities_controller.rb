@@ -18,7 +18,9 @@ class CitiesController < ApplicationController
     else
       @page = 1
     end
-    if @city.posts.count > (@page.to_i * 10) + 10
+    if @city.posts.count < 10
+      @posts = @city.posts
+    elsif @city.posts.count > (@page.to_i * 10) + 10
     	@posts = @city.posts.all.order(:created_at)[(0 + (10 * @page.to_i))...(10 + (10 * @page.to_i))]
     else
     	@posts = @city.posts.all.order(:created_at)[(-10..-1)]
