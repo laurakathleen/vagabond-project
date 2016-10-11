@@ -24,14 +24,20 @@
   a {
     display: inline;
   }
-
+  .city-card {
+    margin-top: 20px;
+  }
+  .centered {
+    margin-top: 30px;
+    text-align: center;
+  }
   .cover-up {
     background-color: rgba(255,255,255,0.8);
     padding: 20px;
     margin: 20px 0;
     border-radius: 3px;
   }
-
+  
   #new-post-form {
     z-index: 1;
     text-align: center;

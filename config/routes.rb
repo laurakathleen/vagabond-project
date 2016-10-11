@@ -16,6 +16,10 @@ Rails.application.routes.draw do
 
   get 'cities', to: 'cities#index'
 
+
+  get 'cities/:city_url_display/approve', to: 'cities#approve', as: 'city_approve'
+  post 'cities', to: 'cities#create'
+
   get 'cities/new'
   get 'cities/:city_url_display', to: 'cities#show', as: 'city'
   get 'cities/:city_url_display/page/:page', to: 'cities#show'
