@@ -27,7 +27,9 @@
     </div>
   </div>
 </div>
-
+<% @post.comments.each do |comment| %>
+<p> <%= comment.comment_content %></p>
+<% end %>
 <h2>Add a comment:</h2>
 <%= form_for :comment, :url => new_comment_path, :html => {:method => :post} do |f| %>
 
