@@ -6,11 +6,11 @@ $(document).ready(function(){
          {selector: '#explore-container', offset: 200, callback: scrollCallback }
        ];
        Materialize.scrollFire(options);*/
-       var scrollTop = $(window).scrollTop;
-       var opacity = 1;
+       //var scrollTop = $(window).scrollTop;
+       //var opacity = 1;
        $(window).on('scroll', function() {
          //console.log('scrolling');
-         var newScrollTop = $(this).scrollTop();
+         /*var newScrollTop = $(this).scrollTop();
          if (newScrollTop > scrollTop) {
            if (opacity >= 1) {
              opacity = 1;
@@ -26,8 +26,18 @@ $(document).ready(function(){
            $('#background-img').css('opacity', opacity);
          }
 
-         scrollTop = newScrollTop;
+         scrollTop = newScrollTop;*/
+         console.log($(this).scrollTop());
+         if ($(this).scrollTop() > 200) {
+           $('#background-img').css('opacity', 0);
+           $('body').css('background-color', '#bdbdbd');
+         } else {
+            $('#background-img').css('opacity', 1);
+            $('body').css('background-color', '#fff');
+         }
        });
+
+       $('.modal-trigger').leanModal();
 });
 
 /*function scrollCallback() {

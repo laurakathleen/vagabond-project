@@ -8,7 +8,7 @@
     background-size: cover;
   }*/
   body {
-    background-color: #ffcdd2;
+    -webkit-transition: background-color 0.8s;
   }
   #user-show-container {
     height: 80%;
@@ -53,6 +53,13 @@
     margin-left: 200px;
   }
 
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+
   #background-img {
     background-size: cover;
     background-position: center;
@@ -60,8 +67,12 @@
     -moz-filter:brightness(80%);
     filter:url(#brightness);
     filter:brightness(80%);
-    position: absolute;
+    position: fixed;
     width: 100%;
+    height: auto;
+    top: 20;
+    left: 0;
+    -webkit-transition: opacity 0.8s;
   }
 
   #explore-container {
@@ -76,14 +87,30 @@
     font-weight: 500 !important;
   }
 
-  .welcome-text {
+  #welcome-text {
+    font-weight: 600;
+    text-align: left;
+    margin-left: 40px;
+    padding-top: 6%;
+  }
+
+  #welcome-tag {
     font-weight: 600;
     text-align: left;
     margin-left: 40px;
   }
 
-  .parallax-container {
-     height: 100px !important;
+  #welcome-btn {
+    margin-left: 40px;
+    background-color: #d32f2f;
+  }
+
+  #welcome-modal {
+    background-color: #fff;
+  }
+
+  .redify {
+    color: #d32f2f;
   }
 
   .explore-img {
