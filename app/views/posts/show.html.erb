@@ -19,7 +19,11 @@
 
 <% if current_user && (@post.user == current_user || current_user.admin) %>
 	<%= button_to 'Delete Post', post_path(@post), method: :delete, data: {confirm: 'Are you sure you want to delete this post?' }%>
+<% end %>
 
+<% if current_user %>
+<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Add Comment
+  <% link_to new_comment_path(@post) %></a>
 <% end %>
 
 	    </div>
@@ -27,18 +31,39 @@
     </div>
   </div>
 </div>
-<% @post.comments.each do |comment| %>
-<p> <%= comment.comment_content %></p>
-<% end %>
-<h2>Add a comment:</h2>
-<%= form_for :comment, :url => new_comment_path, :html => {:method => :post} do |f| %>
+<div class="row">
+  <div class="col m8 offset-m2">
+    <div class="card white-grey darken-1" id="show-post">
+      <div class="card-content black-text post-form" id="show-post-form">
+        <% @post.comments.each do |comment| %>
+        <p> <%= comment.comment_content %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <p>
-    <%= f.text_area :comment_content %>
-    <%= f.hidden_field :post_id, value: @post_id %>
-    <%= f.hidden_field :user_id, value: session[:user_id] %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+  
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Add a comment:</h4>
+      <%= form_for :comment, :url => new_comment_path, :html => {:method => :post} do |f| %>
+
+        <p>
+          <%= f.text_area :comment_content %>
+          <%= f.hidden_field :post_id, value: @post_id %>
+          <%= f.hidden_field :user_id, value: session[:user_id] %>
+        </p>
+        <div class="modal-footer">
+          <p class=" modal-action modal-close waves-effect waves-green btn-flat">
+          <%= f.submit %>
+          </p>
+          <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat"></a>
+          <% end %>
+        </div>
+    </div>
+  </div>
+
+
