@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    # @comment = Comment.create(variable)
     @post = Post.find_by_id(params[:id])
     @user = @post.user
   end
@@ -32,7 +33,12 @@ class PostsController < ApplicationController
   end
 
   private
+
   def post_params
     params.require(:post).permit(:user_id, :city_id, :post_title, :post_content)
+  end
+
+  def comment_params
+    params.require(:comment).permit(:comment_content, :user_id, :post_id)
   end
 end

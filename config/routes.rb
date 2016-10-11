@@ -9,8 +9,12 @@ Rails.application.routes.draw do
   patch 'posts/show/:post_id', to: 'posts#update'
   delete 'posts/show/:post_id', to: 'posts#destroy'
 
-  get 'cities', to: 'cities#index'
+  get 'posts/show/:id', to: 'comments#new'
+  post 'posts/show/:id', to: 'comments#create', as: 'new_comment'
+  get 'posts/show/:id', to: 'comments#show'
+  
 
+  get 'cities', to: 'cities#index'
 
   get 'cities/new'
   get 'cities/:city_url_display', to: 'cities#show', as: 'city'
@@ -30,4 +34,5 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/sessions', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
+
 end

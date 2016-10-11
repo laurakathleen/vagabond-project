@@ -25,9 +25,21 @@ city: <%= link_to @post.city.city_name, '/cities/' + @post.city.url_display %></
 
 <% end %>
 
-
 	    </div>
       </div>
     </div>
   </div>
 </div>
+
+<h2>Add a comment:</h2>
+<%= form_for :comment, :url => new_comment_path, :html => {:method => :post} do |f| %>
+
+  <p>
+    <%= f.text_area :comment_content %>
+    <%= f.hidden_field :post_id, value: @post_id %>
+    <%= f.hidden_field :user_id, value: session[:user_id] %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
