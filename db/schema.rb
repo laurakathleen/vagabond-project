@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161009185554) do
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20161011175940) do
+=======
+ActiveRecord::Schema.define(version: 20161011192809) do
+>>>>>>> cc8a90ce9c625dbcd8673cdaca9d736ef63ca9f9
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +27,15 @@ ActiveRecord::Schema.define(version: 20161009185554) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "url_display"
+    t.string   "status"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "comment_content"
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "posts", force: :cascade do |t|

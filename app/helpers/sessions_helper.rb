@@ -1,5 +1,6 @@
 module SessionsHelper
   @@city_id = nil
+  @@post_id = nil
   def login(user)
     session[:user_id] = user.id
 
@@ -20,5 +21,13 @@ module SessionsHelper
 
   def getCityId
     @@city_id
+  end
+
+  def setPostId(post_id)
+    @@post_id = post_id
+  end
+
+  def getPostId
+    @@post_id
   end
 end
