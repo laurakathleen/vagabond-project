@@ -1,55 +1,47 @@
-	<!--<div class="parallax-container">
-		 <div class="parallax">
-			 <img src="http://img1.mxstatic.com/wallpapers/943fbf40f69f482bcbec031eec3e0050_large.jpeg">
-		 </div>-->
-	 <img id="background-img" src="http://img1.mxstatic.com/wallpapers/943fbf40f69f482bcbec031eec3e0050_large.jpeg">
+
+ 	<img id="background-img" src="http://img1.mxstatic.com/wallpapers/943fbf40f69f482bcbec031eec3e0050_large.jpeg">
 	 <div class="container">
 			 <div>
-				 <h2 class="welcome-text">Take a journey.</h2>
-				 <p class="welcome-text"> ....not all who wander are lost. </p>
+				 <h2 id="welcome-text">Take a journey.</h2>
+				 <p id="welcome-tag"> ....not all who wander are lost. </p>
+				 <button id="welcome-btn" class="waves-effect waves-light btn modal-trigger animated bounceInLeft"
+				 					data-target="welcome-modal">Get Started</button>
 			 </div>
 		 <div class="card" id="explore-container">
 		 <div class="row">
 			 <div class="col s12"><h3 class="center-align">explore.</h3></div>
 			 <div class="col s8">
-				 <div class="card hoverable animated fadeIn">
+				 <div class="card hoverable animated fadeInLeftBig">
 						 <div class="card-image">
-							 <a href="cities/london"><img class="explore-img" src="assets/london"></a>
+							 <a href="/cities/london"><img class="explore-img" src="assets/london"></a>
 							 <span class="card-title">London</span>
 						 </div>
 				 </div>
 			</div>
 		   <div class="col s4">
-				 <div class="card hoverable animated fadeIn">
+				 <div class="card hoverable animated fadeInRightBig">
              <div class="card-image">
-               <a href="cities/gibraltar"><img class="explore-img" src="assets/gibraltar"></a>
+               <a href="/cities/gibraltar"><img class="explore-img" src="assets/gibraltar"></a>
                <span class="card-title">Gibraltar</span>
              </div>
  				</div>
 		   </div>
 			 <div class="col s12">
-				<!--<h5 class="center-align">San Francisco</h3>
-				<a href="/cities/san-francisco">
-			 		<img class="explore-img hoverable" id="sf-img" src="https://static.pexels.com/photos/28184/pexels-photo-28184.jpg">
-				</a>-->
-				<div class="card hoverable animated fadeIn">
+				<div class="card hoverable animated fadeInUpBig">
             <div class="card-image">
-              <a href="cities/san-francisco"><img id="sf-img" src="https://static.pexels.com/photos/28184/pexels-photo-28184.jpg"></a>
+              <a href="/cities/san-francisco"><img id="sf-img" src="https://static.pexels.com/photos/28184/pexels-photo-28184.jpg"></a>
               <span class="card-title">San Francisco</span>
             </div>
 				</div>
 		   </div>
 		 </div>
 	 </div>
-  </div>
+	</div>
 
-
-
-
-<!--<div>
-	<ul>
- 	 	<% for user in @users %>
-  			<li><%= link_to user.first_name + ' ' + user.last_name, user %></li>
- 	 	<% end %>
-  	</ul>
-</div>-->
+	<div id="welcome-modal" class="modal bottom-sheet">
+		<div class="modal-content">
+			<h2 class="center-align"><span class="redify">welcome.</span></h2>
+			<h4 class="center-align">Discover your next travel adventure.</h4>
+			<p class="center-align">Click on a city to explore the experiences of other nomads, or post to share about your own journies.</p>
+		</div>
+	</div>
