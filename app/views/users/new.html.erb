@@ -1,7 +1,7 @@
 <div class="container">
 <img id="background-img" src="http://img1.mxstatic.com/wallpapers/943fbf40f69f482bcbec031eec3e0050_large.jpeg">
   <div class="row">
-    <div class="col s6 offset-m5">
+    <div class="col s6 offset-s3">
       <div class="card white-grey darken-1" id="new-form">
         <%= form_for @user do |f| %>
           <div class="row">
@@ -27,10 +27,10 @@
               <%= f.text_field :favorite_city, placeholder: "Favorite City" %>
             </div>
              <div>
-    <%= f.hidden_field :admin, value: false %>
-  </div>
-          </div>  
-            <center><%= f.submit "Sign Up", :class => 'btn waves-effect waves light grey' %></center>
+              <%= f.hidden_field :admin, value: false %>
+            </div>
+          </div>
+            <center><%= f.submit "Sign Up", :class => 'btn waves-effect waves redify-bgk' %></center>
         <% end %>
       </div>
     </div>

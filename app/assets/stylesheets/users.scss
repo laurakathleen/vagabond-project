@@ -10,6 +10,7 @@
   body {
     -webkit-transition: background-color 0.8s;
   }
+
   #user-show-container {
     height: 80%;
   }
@@ -17,6 +18,7 @@
   #profile-card {
     height: 100%;
     opacity: .92;
+    padding-top: 80px;
   }
 
   #profile-info {
@@ -43,14 +45,9 @@
 
   #new-form {
     background-color: rgba(255,255,255,0.85);
-  }
-
-  .new-form-div {
-    position: relative;
     text-align: center;
-    z-index: 0;
-    margin-top: 200px;
-    margin-left: 200px;
+    margin-top: 30%;
+    padding-bottom: 20px;
   }
 
   nav {
@@ -110,7 +107,11 @@
   }
 
   .redify {
-    color: #d32f2f;
+    color: #d32f2f !important;
+  }
+
+  .redify-bgk {
+    background-color: #d32f2f !important;
   }
 
   .explore-img {
@@ -123,6 +124,18 @@
   #sf-img {
     height: 400px;
   }
+  .input-field label {
+     color: #d32f2f !important;
+   }
+
+  .input-field input[type=text]:focus + label {
+     color: #d32f2f !important;
+   }
+
+  .input-field input[type=text]:focus {
+     border-bottom: 1px solid #d32f2f !important;
+     box-shadow: 0 1px 0 0 #d32f2f !important;
+   }
 
   ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: #f44336;

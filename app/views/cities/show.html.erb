@@ -1,33 +1,33 @@
 <%= image_tag "https://static.pexels.com/photos/28184/pexels-photo-28184.jpg", id: "city-img" %>
 
-<div class="container">
-<div class="row top-margined">
-	<div class="col m10 offset-m1">
-		<div class="card white-grey darken-1">
-			<div class="card-content black-text">
-				<% setCityId(@city.id) %>
-				<h1><%= @city.city_name %> 
-					<% if current_user && current_user.admin && @city.status == nil %>
-						<%= link_to 'Approve City', city_approve_path %>
-					<% end %>							
-				</h1>
-  
-				<ul>
-					<% if @posts %>
-						<% for post in @posts %>
-  							<li class="city-card"><%= link_to post.post_title, '/posts/show/' + post.id.to_s %> - by <%= link_to post.user.first_name + ' ' + post.user.last_name, post.user %>
-  							<p><%= post.post_content[0...140] + '....' %><%= link_to 'more', post %></p>
-  							</li>
-						<% end %>
-					<% end %>
-				</ul>
-				<div class="centered"><%= link_to 'more posts', '/cities/' + @city.url_display + '/page/' + (@page.to_i + 1).to_s %>
-					<%= link_to 'Create Post', posts_new_path%>
-				</div>
 
-			</div>
+
+<div class="row">
+  <div class="col m8 offset-m2">
+	<div class="card white-grey darken-1">
+	  <div class="card-content black-text">
+	  <% setCityId(@city.id) %>
+		<h1><%= @city.city_name %> 
+		<% if current_user && current_user.admin && @city.status == nil %>
+		<%= link_to 'Approve City', city_approve_path %>
+	  <% end %>							
+	    </h1>
+
+		<ul>
+		<% if @posts %>
+		  <% for post in @posts %>
+		  <li class="city-card"><%= link_to post.post_title, '/posts/show/' + post.id.to_s %> - by <%= link_to post.user.first_name + ' ' + post.user.last_name %>
+		  <p><%= post.post_content[0...140] + '....' %><%= link_to 'more', post %></p>
+		  </li>
+		  <% end %>
+		<% end %>
+		</ul>
+	  	<div class="centered"><%= link_to 'more posts', '/cities/' + @city.url_display + '/page/' + (@page.to_i + 1).to_s %>
+				<%= link_to 'Create Post', posts_new_path%>
 		</div>
+	  </div>
 	</div>
+  </div>
 </div>
 </div>
 

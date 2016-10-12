@@ -1,9 +1,19 @@
-body,
-html {
-    height: 100%;
-}
+body, html {
+		height: 100%;
+	}
+
+	#site-title {
+		margin-left: 20px;
+	}
+
+	#login-form {
+		background-color: rgba(255,255,255,0.80);
+		text-align: center;
+	}
+
 
 body * {
+
     color: black;
 }
 
@@ -25,6 +35,9 @@ nav {
 
 #login-form {
     background-color: rgba(255, 255, 255, 0.80);
+		text-align: center;
+    margin-top: 30%;
+    padding-bottom: 20px;
 }
 
 #new-post {
