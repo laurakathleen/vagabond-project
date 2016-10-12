@@ -25,11 +25,11 @@
 <% end %>
 <% @post.comments.reverse_each do |comment| %>
 <div class="row">
-  <div class="col m6 offset-m3">
+  <div class="col s12">
     <div class="card white-grey darken-1" id="show-post">
       <div class="card-content black-text post-form">
         <p><%= '"' + comment.comment_content + '"' %></p>
-        <p><span class='italics'>-<%= comment.user.first_name %> <%= comment.user.last_name %><%= comment.created_at.strftime(" on %m/%d/%Y") %></span></p>
+        <p><span class='italics'>- <%= comment.user.first_name %> <%= comment.user.last_name %><%= comment.created_at.strftime(" on %m/%d/%Y") %></span></p>
       </div>
     </div>
   </div>
