@@ -11,9 +11,7 @@ Rails.application.routes.draw do
 
   get 'posts/show/:id', to: 'comments#new'
   post 'posts/show/:id', to: 'comments#create', as: 'new_comment'
-  get 'posts/show/:id', to: 'comments#show'
-  get 'posts/show/:id', to: 'comments#edit', as: 'edit_comment'
-  patch 'posts/show/:post_id', to: 'comments#update'
+  get 'posts/show/:id', to: 'comments#show', as: 'comment'
   
   
 
