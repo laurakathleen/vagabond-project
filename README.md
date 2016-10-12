@@ -15,7 +15,7 @@ Click on a city to explore the experiences of other nomads, or post to share abo
 
 ### Model-Database-Relationship
 
-[Imgur](http://i.imgur.com/QCjeSEC.jpg?2)
+![Imgur](http://i.imgur.com/QCjeSEC.jpg?2)
 
 
 ## Deployment
