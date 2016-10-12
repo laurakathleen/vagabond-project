@@ -1,5 +1,5 @@
+
 $(document).on('turbolinks:load', function(){
-    $('.modal-trigger').leanModal();
        $(window).on('scroll', function() {
          if ($(this).scrollTop() > 200) {
            $('#background-img').css('opacity', 0);
@@ -8,4 +8,5 @@ $(document).on('turbolinks:load', function(){
             $('#background-img').css('opacity', 1);
          }
        });
+      $('.modal-trigger').leanModal();
   });

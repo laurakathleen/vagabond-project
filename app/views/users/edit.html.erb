@@ -1,33 +1,44 @@
-Edit
+<div class="container">
+<img id="background-img" src="http://img1.mxstatic.com/wallpapers/943fbf40f69f482bcbec031eec3e0050_large.jpeg">
+  <div class="row">
+    <div class="col s6 offset-s3">
+      <div class="card white-grey darken-1" id="new-form">
+        <%= form_for @user do |f| %>
+          <div class="row">
+            <div class="col s6 offset-s3">
+              <%= f.text_field :first_name, placeholder: "First name" %>
+            </div>
+            <div class="col s6 offset-s3">
+              <%= f.text_field :last_name, placeholder: "Last name" %>
+            </div>
+            <div class="col s6 offset-s3">
+              <%= f.email_field :email, placeholder: "Email" %>
+            </div>
+            <div class="col s6 offset-s3">
+              <%= f.password_field :password, placeholder: "Password" %>
+            </div>
+            <div class="col s6 offset-s3">
+              <%= f.text_field :current_city, placeholder: "Current City" %>
+            </div>
+            <div class="col s6 offset-s3">
+              <%= f.text_field :home_city, placeholder: "Home City" %>
+            </div>
+            <div class="col s6 offset-s3">
+              <%= f.text_field :favorite_city, placeholder: "Favorite City" %>
+            </div>
+              <% if current_user.admin %>
+            <div>
+             Admin Priv: <%= f.check_box :admin %>
+            </div>
+              <% end %>
 
-<%= form_for @user do |f| %>
-  <div>
-    <%= f.text_field :first_name, placeholder: "First name" %>
-  </div>
-  <div>
-    <%= f.text_field :last_name, placeholder: "Last name" %>
-  </div>
-  <div>
-    <%= f.email_field :email, placeholder: "email" %>
-  </div>
-  <div>
-    <%= f.password_field :password, placeholder: "password" %>
-  </div>
-  <div>
-    <%= f.text_field :current_city, placeholder: "Current City" %>
-  </div>
-  <div>
-    <%= f.text_field :home_city, placeholder: "Home City" %>
-  </div>
-  <div>
-    <%= f.text_field :favorite_city, placeholder: "Favorite City" %>
-  </div>
-  <% if current_user.admin %>
-    <div>
-     Admin Priv: <%= f.check_box :admin %>
+
+            </div>
+            <a class="waves-effect waves-light btn red">
+                <%= f.submit "Save" %>
+            </a>
+              <% end %>
+          </div>
+        </div>
     </div>
-  <% end %>
-
-  <%= f.submit "Edit" %>
-
-<% end %>
+  </div>

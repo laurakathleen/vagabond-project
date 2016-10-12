@@ -26,5 +26,12 @@ class CreateUsers < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+    create_table :comments do |t|
+      t.text :comment_content
+      t.integer :user_id
+      t.integer :post_id
+
+      t.timestamps
+    end
   end
 end
