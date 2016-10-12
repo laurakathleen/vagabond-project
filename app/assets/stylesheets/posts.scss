@@ -108,3 +108,42 @@
 }
 
 
+/********Cities Index *******/
+#cities-index-container {
+    margin-top: 8em;
+}
+
+#nomad-cities {
+    text-align: center;
+}
+
+.city-index-btn {
+    margin: 0 auto;
+}
+
+.post-snippet {
+    display: flex;
+    width: 100%;
+    background-color: white;
+    background-color: rgba(255,255,255,0.8);
+    padding: 1em;
+    text-align: center;
+}
+
+#city-individual-post {
+    padding: 0.5em;
+}
+
+#posted-by {
+    font-size: 16px;
+}
+
+li {
+    list-style: none;
+}
+
+.red-font {
+    color: #d32f2f;
+    
+}
+

@@ -10,8 +10,8 @@ User.destroy_all
 Post.destroy_all
 City.destroy_all
 City.create(city_name: 'San Francisco', url_display: 'san-francisco', image_url: "https://static.pexels.com/photos/28184/pexels-photo-28184.jpg")
-City.create(city_name: 'London', url_display: 'london', image_url: "https://static.pexels.com/photos/28184/pexels-photo-28184.jpg")
-City.create(city_name: 'Gibraltar', url_display: 'girbaltar', image_url: "https://static.pexels.com/photos/28184/pexels-photo-28184.jpg")
+City.create(city_name: 'London', url_display: 'london', image_url: "https://static.pexels.com/photos/50632/pexels-photo-50632.jpeg")
+City.create(city_name: 'Gibraltar', url_display: 'girbaltar', image_url: "http://i68.tinypic.com/2806zao.jpg")
 # test = User.create({first_name: 'test', last_name: 'test', email: 'test@test.com', password: 'test', current_city: 'testing city', home_city: 'testing city', favorite_city: 'testing city'})
 # test_post = Post.create({post_title: "Test Title", post_content: 'Test content'})
 
