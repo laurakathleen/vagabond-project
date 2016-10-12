@@ -1,8 +1,8 @@
 <%= image_tag "https://static.pexels.com/photos/28184/pexels-photo-28184.jpg", id: "city-img" %>
 
-
-<div class="row">
-	<div class="col m8 offset-m2">
+<div class="container">
+<div class="row top-margined">
+	<div class="col m10 offset-m1">
 		<div class="card white-grey darken-1">
 			<div class="card-content black-text">
 				<% setCityId(@city.id) %>
@@ -15,7 +15,7 @@
 				<ul>
 					<% if @posts %>
 						<% for post in @posts %>
-  							<li class="city-card"><%= link_to post.post_title, '/posts/show/' + post.id.to_s %> - by <%= link_to post.user.first_name + ' ' + post.user.last_name %>
+  							<li class="city-card"><%= link_to post.post_title, '/posts/show/' + post.id.to_s %> - by <%= link_to post.user.first_name + ' ' + post.user.last_name, post.user %>
   							<p><%= post.post_content[0...140] + '....' %><%= link_to 'more', post %></p>
   							</li>
 						<% end %>
@@ -29,7 +29,7 @@
 		</div>
 	</div>
 </div>
-
+</div>
 
 
 
