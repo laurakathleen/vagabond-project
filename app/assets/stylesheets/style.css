@@ -74,7 +74,7 @@ nav {
 }
 
 .city-card {
-    margin-top: 20px;
+	overflow: auto;
 }
 
 .input-field label {
@@ -85,6 +85,10 @@ nav {
 .input-field input[type=text]:focus {
     border-bottom: 1px solid red;
     box-shadow: 0 1px 0 0 red;
+}
+
+.italic {
+    font-style: italic;
 }
 
 .login-div {
@@ -101,5 +105,38 @@ nav {
 
 .top-margined {
   margin-top: 15vh;
+}
+
+.city-post {
+	margin-left: 10px !important;
+	margin-right: 10px !important;
+	height: 200px !important;
+	overflow: auto !important;
+}
+
+#city-posts-container {
+	margin-left: 10%;
+}
+
+.city-name {
+	margin-top: 80px;
+	font-weight: 600;
+}
+
+.btn {
+	background-color: #d32f2f !important;
+}
+
+#create-post-btn {
+	background-color: #d32f2f !important;
+}
+
+.redify {
+	color: #d32f2f !important;
+}
+
+.blackify {
+	color: #000;
+	font-weight: 500;
 }
 
