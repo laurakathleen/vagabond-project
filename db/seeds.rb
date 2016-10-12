@@ -65,6 +65,4 @@ for user_data in users_data
 	new_user.save
 end
 p "created #{User.count} users, and #{City.count} cities, with a total post count of #{Post.count}"
-# users = User.create(users_data)
-# posts = Post.create(posts_data)
 

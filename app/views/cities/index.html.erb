@@ -25,20 +25,20 @@
 		    </ul>
 
 
-    <div class="row">
-	  <div class="col m8 post-snippet offset-m2">	
-  		<% for post in city.posts[0..3] %>
-		  <div id="city-individual-post">
-	  	    <h4 id="city-index-title"><%= link_to post.post_title, post %><br>
-			  <span id="posted-by">Posted by: <%= link_to post.user.first_name + ' ' + post.user.last_name, post.user %></span></h4>
-	  		  <p><%= post.post_content.split('')[0..200].join('') + '...' %>
-						<%= link_to "more", post %>
-	  		  </p>
-    	  </div>
+    		<div class="row">
+	  			<div class="col m8 post-snippet offset-m2">	
+  					<% for post in city.posts[0..3] %>
+		  				<div id="city-individual-post">
+	  	   				    <h4 id="city-index-title"><%= link_to post.post_title, post %><br>
+			  					<span id="posted-by">Posted by: <%= link_to post.user.first_name + ' ' + post.user.last_name, post.user %></span></h4>
+	  		  				<p><%= post.post_content.split('')[0..200].join('') + '...' %>
+								<%= link_to "more", post %>
+	  		  				</p>
+    	  				</div>
+  					<% end %>
+  	  			</div>
+    		</div>
   		<% end %>
-  	  </div>
-    </div>
-  <% end %>
   	</div>
-  </div>
+</div>
 </div>
