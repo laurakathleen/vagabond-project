@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20161006223908) do
 
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -25,17 +24,6 @@ ActiveRecord::Schema.define(version: 20161006223908) do
     t.datetime "updated_at",  null: false
     t.string   "url_display"
     t.string   "status"
-
-  end
-
-  create_table "comments", force: :cascade do |t|
-    t.text     "comment_content"
-    t.integer  "user_id"
-    t.integer  "post_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.integer  "commentable_id"
-    t.string   "commentable_type"
   end
 
   create_table "posts", force: :cascade do |t|
