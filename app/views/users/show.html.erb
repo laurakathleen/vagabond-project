@@ -8,7 +8,7 @@
             <ul>
               <li><h4><%=@user.current_city%></h4></li>
               <% if current_user == @user || current_user && current_user.admin %>
-                  <li><%= link_to "Edit Profile", edit_user_path %></li>
+                  <li><%= link_to "Edit Profile", edit_user_path, class: "redify" %></li>
               <% end %>
             <ul>
         </div>

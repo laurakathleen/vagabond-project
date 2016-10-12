@@ -2,29 +2,29 @@
 
 <% if current_user %>
 <div class="row">
-	<div class="col m8 offset-m2">
-		<div class="card white-grey darken-1" id="new-post">
-			<div class="card-content black-test post-form">
-				<%= form_for @city do |f| %>
-				<div class="row post-div input-field">
-					<%= f.text_field :city_name, placeholder: "Title" %>
-					<%= f.text_field :image_url, placeholder: "Image Url" %>
-					<% if @current_user.admin %>
-						<%= f.hidden_field :status, value: 'approved' %>
-					<% end %>
-					<a class="waves-effect waves-light btn create-brn"><%= f.submit "Create Post" %></a>
-				</div>
-				<% end %>
-			</div>
+  <div class="col m8 offset-m2">
+	<div class="card white-grey darken-1" id="new-post">
+	  <div class="card-content black-test post-form">
+		<%= form_for @city do |f| %>
+		<div class="row post-div input-field">
+		  <%= f.text_field :city_name, placeholder: "Title" %>
+		  <%= f.text_field :image_url, placeholder: "Image Url" %>
+		  <% if @current_user.admin %>
+		  <%= f.hidden_field :status, value: 'approved' %>
+		  <% end %>
+		  <a class="waves-effect waves-light btn create-brn"><%= f.submit "Create Post" %></a>
 		</div>
-	</div>
+		<% end %>
+	  </div>
+    </div>
+  </div>
 </div>
 <% else %>
-	<div class="row">
-		<dov class="col m8 offset-m2">
-			<div class="card white-grey darken-1">
-				<div class="card-content black-text">What are you doing here you need to log in</div>
-			</div>
-		</dov>
-	</div>
+  <div class="row">
+	  <dov class="col m8 offset-m2">
+		  <div class="card white-grey darken-1">
+			  <div class="card-content black-text">What are you doing here you need to log in</div>
+		  </div>
+	  </dov>
+  </div>
 <% end %>

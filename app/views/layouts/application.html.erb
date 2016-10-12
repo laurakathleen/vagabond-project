@@ -17,27 +17,26 @@
 
   </head>
   <body>
-              <% if current_user %>
-                <%= current_user.color_profile %>
-              <% end %>
-      <header>
-
-        <nav>
-          <div class="nav-wrapper grey">
-            <%= link_to "nomad.", root_path, class: "brand-logo left", id: "site-title"%>
-               <ul class="right hide-on-med-and-down">
-                <% if current_user %>
-                  <li><%= link_to "Profile", user_path(current_user)%></li>
-                    <li><%= link_to "Cities", cities_path%></li>
-                  <li><%= link_to "Log Out", logout_path %></li>
-                <% else %>
-                  <li><%= link_to "Create Account", new_user_path %></li>
-                  <li><%= link_to "Log In", login_path %></li>
-                <% end %>
-              </ul>
-          </div>
-        </nav>
-      </header>
-      <%= yield %>
+    <% if current_user %>
+      <%= current_user.color_profile %>
+    <% end %>
+    <header>
+      <nav>
+        <div class="nav-wrapper grey">
+          <%= link_to "nomad.", root_path, class: "brand-logo left", id: "site-title"%>
+          <ul class="right hide-on-med-and-down">
+          <% if current_user %>
+            <li><%= link_to "Profile", user_path(current_user)%></li>
+            <li><%= link_to "Cities", cities_path%></li>
+            <li><%= link_to "Log Out", logout_path %></li>
+          <% else %>
+            <li><%= link_to "Create Account", new_user_path %></li>
+            <li><%= link_to "Log In", login_path %></li>
+            <% end %>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <%= yield %>
   </body>
 </html>
