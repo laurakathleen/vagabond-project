@@ -17,7 +17,7 @@
       <ul>
         <% for post in @posts %>
         <li>
-           <h5><%= link_to post.post_title, '/posts/show/' + post.id.to_s %></h5>
+           <h5><%= link_to post.post_title, '/posts/show/' + post.id.to_s, class: "redify"%></h5>
            <p class="post-content"><small><%= post.post_content[0...150] + '...' %></small></p>
         </li>
         <hr>

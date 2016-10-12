@@ -10,6 +10,7 @@
   body {
     -webkit-transition: background-color 0.8s;
   }
+
   #user-show-container {
     height: 80%;
   }
@@ -106,7 +107,11 @@
   }
 
   .redify {
-    color: #d32f2f;
+    color: #d32f2f !important;
+  }
+
+  .redify-bgk {
+    background-color: #d32f2f !important;
   }
 
   .explore-img {
@@ -119,6 +124,18 @@
   #sf-img {
     height: 400px;
   }
+  .input-field label {
+     color: #d32f2f !important;
+   }
+
+  .input-field input[type=text]:focus + label {
+     color: #d32f2f !important;
+   }
+
+  .input-field input[type=text]:focus {
+     border-bottom: 1px solid #d32f2f !important;
+     box-shadow: 0 1px 0 0 #d32f2f !important;
+   }
 
   ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: #f44336;
