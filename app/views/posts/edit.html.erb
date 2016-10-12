@@ -10,7 +10,7 @@
             <%= f.text_area :post_content, placeholder: "Content", :class => "materialize-textarea"%>
             <%= f.hidden_field :city_id, value: @city_id %>
             <%= f.hidden_field :user_id, value: session[:user_id] %>
-            <a class="waves-effect waves-light btn create-btn red"><%= f.submit "Edit Post" %></a>
+            <!--<a class="waves-effect waves-light btn create-btn red">--><%= f.submit "Edit Post"%><!--</a>-->
           </div>
         <% end %>
         </div>
@@ -18,4 +18,3 @@
     </div>
   </div>
 </div>
-
