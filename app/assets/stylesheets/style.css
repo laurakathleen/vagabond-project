@@ -77,13 +77,6 @@ nav {
     margin-top: 20px;
 }
 
-.cover-up {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 3px;
-}
-
 .input-field label {
     color: red;
     text-align: center;
@@ -105,3 +98,8 @@ nav {
 .post-div {
     color: black;
 }
+
+.top-margined {
+  margin-top: 15vh;
+}
+

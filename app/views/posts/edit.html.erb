@@ -1,13 +1,13 @@
 <%= image_tag "https://static.pexels.com/photos/28184/pexels-photo-28184.jpg", id: "city-img" %>
 <div class="container">
   <div class="row">
-    <div class="col m8 offset-m2">
+    <div class="col m10 offset-m1">
       <div class="card white-grey darken-1" id="new-post">
         <div class="card-content black-text post-form">
         <%= form_for @post do |f| %>
           <div class="row post-div input-field">
             <%= f.text_field :post_title, placeholder: "Title" %>
-            <%= f.text_field :post_content, placeholder: "Content" %>
+            <%= f.text_area :post_content, placeholder: "Content", :class => "materialize-textarea"%>
             <%= f.hidden_field :city_id, value: @city_id %>
             <%= f.hidden_field :user_id, value: session[:user_id] %>
             <!--<a class="waves-effect waves-light btn create-btn red">--><%= f.submit "Edit Post"%><!--</a>-->
