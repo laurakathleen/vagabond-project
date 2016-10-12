@@ -2,7 +2,7 @@
 <hr>
 Click on a city to explore the experiences of other nomads, or post to share about your own journies.
 
-![Imgur](http://i.imgur.com/ci6TYhj.png)
+![Imgur](http://i.imgur.com/P5hyjEf.png)
 
 * [Team Members](#team-members)
 
