@@ -14,7 +14,7 @@
 	    </h1>
 
 		<ul>
-		<% if @posts %>
+		<% if @posts.count > 0 %>
 		  <% for post in @posts %>
 		  <li class="city-card"><%= link_to post.post_title, '/posts/show/' + post.id.to_s %> - by <%= link_to post.user.first_name + ' ' + post.user.last_name %>
 		  <p><%= post.post_content[0...140] + '....' %><%= link_to 'more', post %></p>
