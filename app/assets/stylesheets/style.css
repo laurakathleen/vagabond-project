@@ -1,4 +1,4 @@
-	body, html {
+body, html {
 		height: 100%;
 	}
 
@@ -8,88 +8,97 @@
 
 	#login-form {
 		background-color: rgba(255,255,255,0.80);
-	}
-
-	.login-div {
-		position: relative;
 		text-align: center;
-		z-index: 0;
-		margin-top: 200px;
-		margin-left: 200px;
 	}
 
-  body * {
+
+body * {
+
     color: black;
-  }
+}
 
-  ul {
+ul {
     display: inline;
-  }
-  a {
-    display: inline;
-  }
-  .city-card {
-    margin-top: 20px;
-  }
-  .centered {
-    margin-top: 30px;
-    text-align: center;
-  }
-  .cover-up {
-    background-color: rgba(255,255,255,0.8);
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 3px;
-  }
+}
 
-  #new-post-form {
+a {
+    display: inline;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#login-logout-bar {
+    position: fixed;
+}
+
+#login-form {
+    background-color: rgba(255, 255, 255, 0.80);
+}
+
+#new-post {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#new-post-form {
     z-index: 1;
     text-align: center;
     padding-top: 6%;
     justify-content: center;
     width: 50%;
     height: 220px;
-  }
+}
 
-  #new-post {
-    background-color: rgba(255,255,255,0.8);
-  }
+#site-title {
+    margin-left: 20px;
+}
 
-  #login-logout-bar {
-    position: fixed;
-  }
-
-  .login-div {
-    position: relative;
-    margin-top:200px;
-    margin-bottom: 200px;
-  }
-
-  .post-div {
-    color: black;
-  }
-
-  .input-field label {
-     color: red;
-     text-align: center;
-   }
-
-   .input-field input[type=text]:focus {
-     border-bottom: 1px solid red;
-     box-shadow: 0 1px 0 0 red;
-   }
-
-  .btn {
+.btn {
     margin: 0 auto;
     background-color: black;
     color: grey;
-  }
+}
 
-  .btn:hover {
+.btn:hover {
     background-color: grey;
     color: black;
-  }
+}
 
-  nav {
-    background-color: rgba(0,0,0,0);
-  }
+.centered {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.city-card {
+    margin-top: 20px;
+}
+
+.cover-up {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 3px;
+}
+
+.input-field label {
+    color: red;
+    text-align: center;
+}
+
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid red;
+    box-shadow: 0 1px 0 0 red;
+}
+
+.login-div {
+    position: relative;
+    text-align: center;
+    z-index: 0;
+    margin-top: 200px;
+    margin-left: 200px;
+}
+
+.post-div {
+    color: black;
+}

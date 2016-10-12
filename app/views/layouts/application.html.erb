@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hidden Forrest</title>
+    <title>nomad.</title>
     <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'https://fonts.googleapis.com/icon?family=Material+Icons' %>
@@ -28,6 +28,7 @@
                <ul class="right hide-on-med-and-down">
                 <% if current_user %>
                   <li><%= link_to "Profile", user_path(current_user)%></li>
+                    <li><%= link_to "Cities", cities_path%></li>
                   <li><%= link_to "Log Out", logout_path %></li>
                 <% else %>
                   <li><%= link_to "Create Account", new_user_path %></li>
