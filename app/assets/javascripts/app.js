@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).on('turbolinks:load', function(){
     $('.modal-trigger').leanModal();
        $(window).on('scroll', function() {
          if ($(this).scrollTop() > 200) {
