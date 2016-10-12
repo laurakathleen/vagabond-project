@@ -115,6 +115,10 @@ nav {
 	overflow: auto !important;
 }
 
+#city-show-container {
+	background: rgba(255, 255, 255, 0.4)
+}
+
 #city-posts-container {
 	margin-left: 10%;
 }
