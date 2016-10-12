@@ -87,6 +87,10 @@ nav {
     box-shadow: 0 1px 0 0 red;
 }
 
+.italic {
+    font-style: italic;
+}
+
 .login-div {
     position: relative;
     text-align: center;
@@ -135,3 +139,4 @@ nav {
 	color: #000;
 	font-weight: 500;
 }
+

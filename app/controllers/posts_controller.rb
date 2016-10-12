@@ -21,6 +21,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find_by_id(params[:post_id])
     if @post.update(post_params)
+      @post.update(user_id: current_user.id)
       redirect_to '/'
     end
 
