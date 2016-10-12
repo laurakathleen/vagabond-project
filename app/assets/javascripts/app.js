@@ -6,7 +6,6 @@ $(document).ready(function(){
            $('body').css('background-color', '#bdbdbd');
          } else {
             $('#background-img').css('opacity', 1);
-            $('body').css('background-color', '#fff');
          }
        });
   });
