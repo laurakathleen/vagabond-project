@@ -7,7 +7,14 @@
     background-position: center;
     background-size: cover;
   }*/
-  body {
+  html, body {
+    height: 100%;
+    -webkit-transition: background-color 0.8s;
+  }
+
+  #index-container {
+    width: 100%;
+    height: auto;
     -webkit-transition: background-color 0.8s;
   }
 
