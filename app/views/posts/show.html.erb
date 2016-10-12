@@ -9,40 +9,43 @@
       <div class="card-content black-text post-form" id="show-post-form">
         <div class="row post-div input-field showing">
 		  <h1 id="post-title-heading"><%= @post.post_title %> - <%= link_to @post.city.city_name, '/cities/' + @post.city.url_display %></h1>
-		  <h3 id="poster-heading">Posted by <%= @user.first_name %><br><h6 class="see-all">Click for all posts by <span class="see-all"><%= link_to @user.first_name, @user, {:style => 'color:red;', :class => "css_class"} %></span>   |   Click for all <span class="see-all"><%= link_to @post.city.city_name, '/cities/' + @post.city.url_display, {:style => 'color:red;', :class => "css_class"} %> posts</h6></span>
+		  <h3 id="poster-heading">Posted by <%= @user.first_name %><br><h6 class="see-all">Click for all posts by <span class="see-all"><%= link_to @user.first_name, @user, {:style => 'color:red;', :class => "css_class", :hover => 'background-color:grey'} %></span>   |   Click for all <span class="see-all"><%= link_to @post.city.city_name, '/cities/' + @post.city.url_display, {:style => 'color:red;', :class => "css_class"} %> posts</h6></span>
 		  <%= @post.post_content %>
 
-
+<div class="post-show-buttons col m8 offset-m2">
 <% if current_user && (@post.user == current_user || current_user.admin) %>
-	<%= link_to 'Edit Post', edit_post_path(@post)%>
+<a class="waves-effect waves-light btn">
+  <%= button_to 'Edit Post', edit_post_path(@post), method: :get %></a>
 <% end %>
 
 <% if current_user && (@post.user == current_user || current_user.admin) %>
-	<%= button_to 'Delete Post', post_path(@post), method: :delete, data: {confirm: 'Are you sure you want to delete this post?' }%>
+<a class="waves-effect waves-light btn">
+  <%= button_to 'Delete Post', post_path(@post), method: :delete, data: {confirm: 'Are you sure you want to delete this post?' }%></a>
 <% end %>
-
-<% if current_user %>
-<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Add Comment
+<% if current_user && (@post.user == current_user || current_user.admin) %>
+<a class="waves-effect waves-light btn modal-trigger black-text" href="#modal1">Add Comment
   <% link_to new_comment_path(@post) %></a>
 <% end %>
+</div>
 
 	    </div>
       </div>
     </div>
   </div>
 </div>
+
+<% @post.comments.reverse_each do |comment| %>
 <div class="row">
-  <div class="col m8 offset-m2">
+  <div class="col m6 offset-m3">
     <div class="card white-grey darken-1" id="show-post">
       <div class="card-content black-text post-form" id="show-post-form">
-        <% @post.comments.each do |comment| %>
-        <p> <%= comment.comment_content %></p>
-        <% end %>
+        <p><%= comment.comment_content %></p>
+        <p>Commented by: <%= @user.first_name %> <%= @user.last_name %></p>
       </div>
     </div>
   </div>
 </div>
-
+<% end %>
   
 
   <!-- Modal Structure -->
