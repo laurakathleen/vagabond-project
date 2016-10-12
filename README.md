@@ -16,7 +16,6 @@ Click on a city to explore the experiences of other nomads, or post to share abo
 
 ### Overview
 
-### Installation
 
 ## Deployment
 
