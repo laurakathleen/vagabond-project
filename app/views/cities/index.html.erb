@@ -1,35 +1,44 @@
+<div class="no-container" id="cities-index-container">
+  <div class="row">
+  	<div class="col m8 offset-m2">
 
-<% if current_user && current_user.admin %>
-  <%= link_to "Add City", cities_new_path %>
-<% end %>
+  		<% if current_user && current_user.admin %><button class="btn waves-effect waves-light create-city-btn red city-index-btn" type="submit" name="action">
+  		<%= link_to "Add City", cities_new_path %></button>
+		<% end %>
 
-<% if current_user && (current_user && !current_user.admin) %>
-  <%= link_to "Suggest New City", cities_new_path %>
-<% end %>
+		<% if current_user && (current_user && !current_user.admin) %><button class="btn waves-effect waves-light create-city-btn red city-index-btn" type="submit" name="action">
+		  <%= link_to "Suggest New City", cities_new_path %></button>
+		<% end %>
 
-<h1>Current Nomad Cities:</h1>
-  <ul>
-	<% for city in @cities %>
-	  <li><h1><%= link_to city.city_name, '/cities/' + city.url_display %> 
-		
-	  <% if current_user && current_user.admin && city.status == nil %>
-				 - unapproved
-	  <% elsif current_user && current_user.admin %>
-				 - approved
-	  <% end %>
-	  </h1>
+	  	<div class="card hoverable animated fadeInUpBig">
+          <div class="card-image">
+  		    <ul>
+			  <% for city in @cities %>
+	  		  <li><h1 id="nomad-cities"><span class="red-font"><%= link_to city.city_name, '/cities/' + city.url_display %></span>
+	  		  <% if current_user && current_user.admin && city.status == nil %>
+				 - Unapproved
+	  		  <% elsif current_user && current_user.admin %>
+				 - Approved
+	  		  <% end %></h1>
+	  		  <img class="city-index-img" src="<%= city.image_url %>">
+			  </li>
+		    </ul>
 
-			
-	  <% for post in city.posts[0..9] %>
-		<div>
-		  <h4><%= link_to post.post_title, post %> 
-					- <%= link_to post.user.first_name + ' ' + post.user.last_name, post.user %></h4>
-		  <p><%= post.post_content.split('')[0..999].join('') + '...' %>
-					<%= link_to "more", post %>
-		  </p>
-	    </div>
-	  <% end %>
-	  </li>
-		
-	<% end %>
-</ul>
+
+    <div class="row">
+	  <div class="col m8 post-snippet offset-m2">	
+  		<% for post in city.posts[0..3] %>
+		  <div id="city-individual-post">
+	  	    <h4 id="city-index-title"><%= link_to post.post_title, post %><br>
+			  <span id="posted-by">Posted by: <%= link_to post.user.first_name + ' ' + post.user.last_name, post.user %></span></h4>
+	  		  <p><%= post.post_content.split('')[0..200].join('') + '...' %>
+						<%= link_to "more", post %>
+	  		  </p>
+    	  </div>
+  		<% end %>
+  	  </div>
+    </div>
+  <% end %>
+  	</div>
+  </div>
+</div>

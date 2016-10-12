@@ -3,10 +3,19 @@
 <div class="row">
   <div class="col m8 offset-m2">
     <div class="card white-grey darken-1" id="show-post">
-      <div class="card-content black-text post-form" id="show-post-form">
+      <div class="card-content black-text" id="show-post-form">
         <div class="row post-div input-field showing">
-      <h1 id="post-title-heading"><%= @post.post_title %> - <%= link_to @post.city.city_name, '/cities/' + @post.city.url_display, class: "redify" %></h1>
-      <h3 id="poster-heading">Posted by <%= @user.first_name %><br><h6 class="see-all">Click for all posts by <span class="see-all"><%= link_to @user.first_name, @user, {:style => 'color:#d32f2f;', :class => "css_class", :hover => 'background-color:grey'} %></span>   |   Click for all <span class="see-all"><%= link_to @post.city.city_name, '/cities/' + @post.city.url_display, {:style => 'color:red;', :class => "css_class"} %> posts</h6></span>
+      <h1 id="post-title-heading">
+      <%= @post.post_title %> - <%= link_to @post.city.city_name, '/cities/' + @post.city.url_display, class: "redify" %>
+      </h1>
+      <h3 id="poster-heading">
+      Posted by <%= @user.first_name %> 
+      </h3>
+      <h3>
+        <%= @post.created_at.strftime(" on %m/%d/%Y") %>
+      </h3>
+      <h6>
+      Click for all posts by <span class="see-all"><%= link_to @user.first_name, @user, {:style => 'color:#d32f2f;', :class => "css_class", :hover => 'background-color:grey'} %></span>   |   Click for all <span class="see-all"><%= link_to @post.city.city_name, '/cities/' + @post.city.url_display, {:style => 'color:red;', :class => "css_class"} %> posts</h6></span>
       <%= @post.post_content %>
 
 <div class="post-show-buttons col m8 offset-m2">
@@ -20,9 +29,9 @@
   <%= button_to 'Delete Post', post_path(@post), method: :delete, data: {confirm: 'Are you sure you want to delete this post?' }%></a>
 <% end %>
 <% if current_user && (@post.user == current_user || current_user.admin) %>
+<% end %>
 <a class="waves-effect waves-light btn modal-trigger black-text" href="#modal1">Add Comment
   <% link_to new_comment_path(@post) %></a>
-<% end %>
 <% @post.comments.reverse_each do |comment| %>
 <div class="row">
   <div class="col s12">
@@ -51,7 +60,7 @@
   <div id="modal1" class="modal">
     <div class="modal-content">
       <h4>Add a comment:</h4>
-      <%= current_user.first_name %>
+      <% if current_user %>
       <%= form_for :comment, :url => new_comment_path, :html => {:method => :post} do |f| %>
 
         <p>
@@ -65,5 +74,8 @@
           <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat"></a>
           <% end %>
         </div>
+        <% else %>
+        please log in
+        <% end %>
     </div>
   </div>
