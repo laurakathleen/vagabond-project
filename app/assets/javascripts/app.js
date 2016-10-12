@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('.modal-trigger').leanModal();
+      $('.modal-trigger').leanModal();
        $(window).on('scroll', function() {
          if ($(this).scrollTop() > 200) {
            $('#background-img').css('opacity', 0);
@@ -8,4 +8,5 @@ $(document).ready(function(){
             $('#background-img').css('opacity', 1);
          }
        });
+      $('.modal-trigger').leanModal();
   });
