@@ -1,15 +1,12 @@
 <%= image_tag @post.city.image_url, id: "city-img" %>
 
-
-
-
 <div class="row">
   <div class="col m8 offset-m2">
     <div class="card white-grey darken-1" id="show-post">
       <div class="card-content black-text post-form" id="show-post-form">
         <div class="row post-div input-field showing">
-      <h1 id="post-title-heading"><%= @post.post_title %> - <%= link_to @post.city.city_name, '/cities/' + @post.city.url_display %></h1>
-      <h3 id="poster-heading">Posted by <%= @user.first_name %><br><h6 class="see-all">Click for all posts by <span class="see-all"><%= link_to @user.first_name, @user, {:style => 'color:red;', :class => "css_class", :hover => 'background-color:grey'} %></span>   |   Click for all <span class="see-all"><%= link_to @post.city.city_name, '/cities/' + @post.city.url_display, {:style => 'color:red;', :class => "css_class"} %> posts</h6></span>
+      <h1 id="post-title-heading"><%= @post.post_title %> - <%= link_to @post.city.city_name, '/cities/' + @post.city.url_display, class: "redify" %></h1>
+      <h3 id="poster-heading">Posted by <%= @user.first_name %><br><h6 class="see-all">Click for all posts by <span class="see-all"><%= link_to @user.first_name, @user, {:style => 'color:#d32f2f;', :class => "css_class", :hover => 'background-color:grey'} %></span>   |   Click for all <span class="see-all"><%= link_to @post.city.city_name, '/cities/' + @post.city.url_display, {:style => 'color:red;', :class => "css_class"} %> posts</h6></span>
       <%= @post.post_content %>
 
 <div class="post-show-buttons col m8 offset-m2">
@@ -26,39 +23,41 @@
 <a class="waves-effect waves-light btn modal-trigger black-text" href="#modal1">Add Comment
   <% link_to new_comment_path(@post) %></a>
 <% end %>
-</div>
-
-      </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <% @post.comments.reverse_each do |comment| %>
 <div class="row">
-  <div class="col m6 offset-m3">
+  <div class="col s12">
     <div class="card white-grey darken-1" id="show-post">
-      <div class="card-content black-text post-form" id="show-post-form">
-        <p><%= comment.comment_content %></p>
-        <p>Commented by: <%= @user.first_name %> <%= @user.last_name %></p>
+      <div class="card-content black-text post-form">
+        <p><%= '"' + comment.comment_content + '"' %></p>
+        <p><span class='italics'>- <%= comment.user.first_name %> <%= comment.user.last_name %><%= comment.created_at.strftime(" on %m/%d/%Y") %></span></p>
       </div>
     </div>
   </div>
 </div>
 <% end %>
-  
+
+</div>
+
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
   <!-- Modal Structure -->
   <div id="modal1" class="modal">
     <div class="modal-content">
       <h4>Add a comment:</h4>
+      <%= current_user.first_name %>
       <%= form_for :comment, :url => new_comment_path, :html => {:method => :post} do |f| %>
 
         <p>
           <%= f.text_area :comment_content %>
           <%= f.hidden_field :post_id, value: @post_id %>
-          <%= f.hidden_field :user_id, value: session[:user_id] %>
-        </p>
+           <%= f.hidden_field :user_id, value: current_user.id %>         </p>
         <div class="modal-footer">
           <p class=" modal-action modal-close waves-effect waves-green btn-flat">
           <%= f.submit %>
