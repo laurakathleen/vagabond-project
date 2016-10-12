@@ -28,21 +28,6 @@ class CommentsController < ApplicationController
 		@comment = Comment.new
 	end
 
-	def edit
-		@comment = Comment.find(params[:id])
-	end
-
-	def update
-		@comment = Comment.find(params[:id])
-		if @comment.update(comment_params)
-			redirect_to post_path(@post)
-		end
-	end
-
-	def destroy
-
-	end
-
 
 	private 
 	def comment_params
