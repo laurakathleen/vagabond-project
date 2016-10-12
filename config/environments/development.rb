@@ -15,7 +15,7 @@ Rails.application.configure do
 
   # False for 404 pages in development
   # Show full error reports.
-  config.consider_all_requests_local = false
+  config.consider_all_requests_local = true
 
   # Enable/disable caching. By default caching is disabled.
   if Rails.root.join('tmp/caching-dev.txt').exist?

@@ -28,7 +28,7 @@
             </div>
               <% if current_user.admin %>
             <div>
-             Admin Priv: <%= f.check_box :admin %>
+             <%= check_box_tag 'remember', '', false, :admin => 'checkbox' %>
             </div>
               <% end %>
 

@@ -1,4 +1,9 @@
 class PostsController < ApplicationController
+  def new
+    @city_id = getCityId
+    @post = Post.new
+  end  
+
   def create
     @post = Post.create(post_params)
     redirect_to @post
@@ -9,20 +14,16 @@ class PostsController < ApplicationController
     @user = @post.user
   end
 
-  def new
-    @city_id = getCityId
-    @post = Post.new
-  end
-
   def edit
-    @post = Post.find(params[:post_id])
+    @post = Post.find_by_id(params[:post_id])
   end
 
   def update
-    @post = Post.find(params[:post_id])
+    @post = Post.find_by_id(params[:post_id])
     if @post.update(post_params)
-      redirect_to post_path(@post)
+      redirect_to '/'
     end
+
   end
 
   def destroy

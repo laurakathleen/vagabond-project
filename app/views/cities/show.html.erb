@@ -11,7 +11,8 @@
 	    </h1>
       <%= button_to 'Create Post', posts_new_path, method: :get, id: "create-post-btn", class: "btn waves-effect waves-light animated bounceInLeft"%>
   <div class="row">
-		<% if @posts %>
+		<ul>
+		<% if @posts.count > 0 %>
 		  <% for post in @posts %>
         <div class="city-post card col s3 animated fadeInUpBig">
           <%= link_to post.post_title, '/posts/show/' + post.id.to_s, class: "redify" %> - by <%= link_to post.user.first_name + ' ' + post.user.last_name, '/users/' + post.user.id.to_s, class: "blackify" %>
