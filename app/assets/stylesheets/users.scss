@@ -17,6 +17,7 @@
   #profile-card {
     height: 100%;
     opacity: .92;
+    padding-top: 80px;
   }
 
   #profile-info {
@@ -43,14 +44,9 @@
 
   #new-form {
     background-color: rgba(255,255,255,0.85);
-  }
-
-  .new-form-div {
-    position: relative;
     text-align: center;
-    z-index: 0;
-    margin-top: 200px;
-    margin-left: 200px;
+    margin-top: 30%;
+    padding-bottom: 20px;
   }
 
   nav {

@@ -8,14 +8,7 @@
 
 	#login-form {
 		background-color: rgba(255,255,255,0.80);
-	}
-
-	.login-div {
-		position: relative;
 		text-align: center;
-		z-index: 0;
-		margin-top: 200px;
-		margin-left: 200px;
 	}
 
   body * {
