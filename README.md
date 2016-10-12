@@ -1,24 +1,33 @@
-# README
+# nomad.
+* <http://nomad-plus.herokuapp.com/>
+<hr>
+Click on a city to explore the experiences of other nomads, or post to share about your own journies.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![Imgur](http://i.imgur.com/ci6TYhj.png)
 
-Things you may want to cover:
+* [Team Members](#team-members)
 
-* Ruby version
+# <a name="team-members"></a>Team Members
+* "Wolf(Denzale) Reese" <https://github.com/denzalereese>
+* "Sam Darbonne" <https://github.com/SamDarbonne>
+* "Laura Russell" <https://github.com/laurakathleen>
+* "Ashley Vernon" <https://github.com/ashleyvernon>
 
-* System dependencies
 
-* Configuration
+### Overview
 
-* Database creation
+### Installation
 
-* Database initialization
+## Deployment
 
-* How to run the test suite
+Heroku
 
-* Services (job queues, cache servers, search engines, etc.)
+## Built With
+* Ruby-2.3.1
+* [Rails](http://rubyonrails.org/) - The web framework used
+* [Materialize](http://materializecss.com/getting-started.html) - Styling
 
-* Deployment instructions
 
-* ...
+## Acknowledgments
+
+* Team SLAM!!!  
